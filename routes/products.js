@@ -4,4 +4,4 @@ let productsController = require('../controllers/productsControllers');
 
 router.get('/', productsController.index);
 
-module.exports = router;
+module.exports = router; 
