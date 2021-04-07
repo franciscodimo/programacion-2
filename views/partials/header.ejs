@@ -11,6 +11,12 @@
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="../../public/stylesheets/app.css">
 </head>
+<% if(logueado) { 
+	include('headerLogueado') }%>
+	<% else(deslogueado){
+		include('headerDeslogueado')}%>
+		
+	
 <body>
 	<!-- Header -->
 	<header class="main-header">
