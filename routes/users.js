@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// const usersController = require('../controllers/usersController')
 
-module.exports = router;
+// router.get('/', usersController.index);
+// router.post('/login', usersController.login);
+
+// module.exports = router;
+
+
+
+
+
+// var express = require('express');
+// var router = express.Router();
+
+// /* GET users listing. */
+// router.get('/profile',userControllers.profile); 
+
+// module.exports = router;

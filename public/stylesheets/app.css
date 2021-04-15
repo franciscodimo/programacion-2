@@ -4,12 +4,12 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
+  --yellow: #ea6e26;
+  --dark-blue: #4c76a3;
+  --light-blue: #061f46;
+  --gray: #dd3f3f;
   --light-gray: #ebebeb;
-  --green: #39b54a;
+  --green: #b53990;
   --base-font-family: 'Roboto', sans-serif
 }
 
@@ -30,6 +30,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 ul,
@@ -302,6 +303,7 @@ hr {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
+  font-family: cursive;
 }
 
 .product-detail-img {
