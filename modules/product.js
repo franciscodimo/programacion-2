@@ -1,10 +1,10 @@
 let products = [
     { id:0,
-      nombre: "telefono",
+      nombre: "Rolex dorado",
       Valor: "300 pesos",
       tipo: "electrodomestico",
       descripcion: "usado",
-      imagen: "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/FQCXSDL5FVARLLMT3UCC2ZHL2E.jpg"
+      imagen: "https://images-na.ssl-images-amazon.com/images/I/61k3o%2BvopBL._AC_UX522_.jpg"
 },{
     id:1,
     nombre: "Computadora",

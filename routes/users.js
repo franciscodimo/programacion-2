@@ -1,21 +1,10 @@
-// var express = require('express');
-// var router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-// const usersController = require('../controllers/usersController')
+let userController = require('../controllers/userController')
 
-// router.get('/', usersController.index);
-// router.post('/login', usersController.login);
+router.get('/', function(req, res, next) {
+    res.render('profile', { title: 'Express' });
+  });
 
-// module.exports = router;
-
-
-
-
-
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET users listing. */
-// router.get('/profile',userControllers.profile); 
-
-// module.exports = router;
+module.exports = router;

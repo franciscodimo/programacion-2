@@ -1,10 +1,10 @@
-// let userController = {
-//     index: function(req, res) {
-//         return res.render('login' ,{
-//             login: 
-//         } )
-//     }
+let userController = {
+    login: function(req, res) {
+        res.render('profile' ,{
+            login:true 
+        } )
+    }
   
-// }
+}
 
-// module.exports = userController;
+module.exports = userController;
