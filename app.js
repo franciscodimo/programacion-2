@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users')
-
+//Q odna////////////
 
 var app = express();
 
