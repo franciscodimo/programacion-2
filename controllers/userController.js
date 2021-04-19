@@ -1,8 +1,12 @@
+var products = require ('../modules/product')
+
 let userController = {
-    login: function(req, res) {
+    profile: function(req, res) {
         res.render('profile' ,{
-            login:true 
+            profile:'logueado',
+            product:products
         } )
+        
     }
   
 }
