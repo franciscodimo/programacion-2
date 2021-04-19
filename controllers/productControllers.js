@@ -6,6 +6,11 @@ let productController = {
 			product:products[req.params.id],
 
 		})
+	},
+	productAdd: function(req,res){
+		res.render('product-add',{
+			product:products[req.params.id]
+		})
 	}
 }
 
