@@ -32,7 +32,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: rgb(175,175,175);
   font-family: monospace;
 }
 
@@ -72,7 +72,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--azul);
+  background-color:  rgb(175,175,175);
 }
 
 .main-header_home-link,
@@ -160,8 +160,7 @@ hr {
 .banner {
   background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-size: 400px;
   height: 200px;
 }
 
@@ -174,6 +173,7 @@ hr {
 }
 
 .products-title {
+  margin-top: -50px;
   font-size: 2.4em;
   font-weight: 400;
   color: var(--negro);
