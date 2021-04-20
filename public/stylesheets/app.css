@@ -33,8 +33,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: rgb(175,175,175);
-  font-family: monospace;
+  background-image: url(/public/images/onda-abstracta-fondo-vector-tono-blanco-gris_122299-73.jpg);
 }
 
 ul,
