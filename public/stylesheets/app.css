@@ -10,7 +10,10 @@
   --gray: #dd3f3f;
   --light-gray: #8a0606;
   --green: #b53990;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'Roboto', sans-serif;
+  --azul: rgb(121, 125, 127);
+  --negro: rgb(0,0,0);
+  --blanco: rgb(253, 254, 254)
 }
 
 
@@ -69,7 +72,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: var(--azul);
 }
 
 .main-header_home-link,
@@ -159,7 +162,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100px;
+  height: 200px;
 }
 
 
@@ -167,16 +170,17 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  color: var(--blanco);
 }
 
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--negro);
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0);
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
@@ -188,7 +192,7 @@ hr {
 }
 
 .product-box_image {
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--negro);
 }
 
 .product-box_data {
@@ -208,14 +212,14 @@ hr {
 .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
-  color: var(--green);
+  color: var(--blanco);
   margin: 0 0 0 10px;
 }
 
 .product-box_data p {
   font-size: 1.5em;
   width: 100%;
-  color: var(--gray);
+  color: var(--blanco);
   margin: 0;
   height: 0;
   transition: 300ms;
@@ -223,7 +227,7 @@ hr {
 }
 
 .product-box_data i {
-  color: var(--green);
+  color: var(--azul);
   font-size: 1.8em;
   width: 35px;
   height: 35px;
@@ -260,7 +264,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: var(--azul);
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -270,18 +274,18 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: var(--negro);
   font-size: 3.5em;
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color: var(--negro);
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--gray);
+  color: var(--negro);
   font-size: 1.5em;
   font-weight: 300;
 }
