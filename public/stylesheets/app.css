@@ -33,7 +33,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-image: url(/public/images/onda-abstracta-fondo-vector-tono-blanco-gris_122299-73.jpg);
+  background-color: rgb(255, 242, 0);
 }
 
 ul,
@@ -65,20 +65,22 @@ textarea {
 
 hr {
   border: none;
-  border-bottom: solid 1px var(--light-gray);
+  border-left: var(--negro);
+  border-bottom: solid 1px var(--negro);
 }
 
 
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color:  rgb(192,192,192);
+  background-color: rgb(255, 242, 0);
+  height: 250px;
 }
 
 
-.main-header_home-link,
-.main-header_credit-link {
+.main-header_home-link{
   display: block;
+  size: 100px;
 }
 
 .main-header_credit-link {
@@ -116,6 +118,8 @@ hr {
 
 
 
+
+
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
@@ -136,6 +140,9 @@ hr {
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  margin-left: 1070px;
+  margin-bottom: 0px;
+  margin-top: -50px;
 }
 
 .logout{
@@ -183,6 +190,7 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: var(--negro);
+  margin-top: 50px;
 }
 
 .product-box {
@@ -334,9 +342,9 @@ hr {
 }
 
 .product-detail-description {
-  padding: 15px 15px 15px 40px;
   font-size: 1.8em;
-  line-height: 1.5;
+  color: black;
+  text-align: center;
 }
 
 .product-detail-price {
@@ -381,7 +389,7 @@ hr {
 }
 
 .buy-now-button {
-  background-color: var(--light-blue);
+  background-color: var(--negro);
   font-size: 1.6em;
   color: #ffffff;
   padding: 15px;
@@ -433,6 +441,7 @@ hr {
 }
 .comments .user{
   font-size: 1.7em;
+  color: black;
 }
 
 /*====== Formularios ======*/
@@ -450,7 +459,7 @@ hr {
   font-size: 1.5em;
   border-radius: 8px;
   border: none;
-  border: solid 1px var(--gray);
+  border: solid 1px var(--negro);
   padding: 0 15px;
 }
 
