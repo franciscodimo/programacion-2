@@ -9,7 +9,7 @@ let productController = {
 	},
 	productAdd: function(req,res){
 		res.render('product-add',{
-			product:products,
+			products:products,
 			logueado:true
 		})
 	}

@@ -20,6 +20,7 @@ let userController = {
         logueado:false
     } )
   }
+  
 }
 
 module.exports = userController;

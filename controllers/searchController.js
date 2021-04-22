@@ -6,4 +6,5 @@ var product = require ('../modules/product')
                 logueado:false,
             })
         }}
+        
 module.exports = searchController;

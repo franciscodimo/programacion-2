@@ -7,16 +7,16 @@
 	
 	<!-- product detail -->
 <!-- product detail -->
-	<% for( let i = 0; i < product.length; i++ ) { %>
+	<% for( let i = 0; i < products.length; i++ ) { %>
 		<div class="col-12 col-sm-6 col-lg-3">
 		  <section class="product-box">
-			<a href="/product/<%= product[i].id %> ">
+			<a href="/product/<%= products[i].id %> ">
 			  <figure class="product-box_image">
-				<img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+				<img src="<%- products[i].imagen  %> " alt="cafetera moulinex">
 			  </figure>
 			  <article class="product-box_data">
-				<h2><%- product[i].nombre  %> </h2>
-				<p><%- product[i].descripcion  %> </p>
+				<h2><%- products[i].nombre  %> </h2>
+				<p><%- products[i].descripcion  %> </p>
 				<p>Comentarios: tiene 99% de condicion de bateria</p>
 			  </article>
 			</a>
