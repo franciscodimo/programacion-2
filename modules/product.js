@@ -9,9 +9,9 @@ let products = [
     id:1,
     nombre: "Bulgari",
     Valor: "consultar",
-    descripcion:"512gb de ram",
+    descripcion:"nuevo",
     tipo: "electrodomestico",
-    imagen:"https://d3ugyf2ht6aenh.cloudfront.net/stores/679/075/products/e6b0fd16-4751-4d71-bbbf-b4409a8d5a01_nube-8a30633851a80c4a1216121382626058-1024-1024.jpg"
+    imagen:"https://i.pinimg.com/originals/22/d3/6e/22d36eac98bb5e33f5b68379d6b65f3e.jpg"
 },{
     id:2,
     nombre: "pelota de futbol",

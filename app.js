@@ -6,7 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
-var userRouter = require ('./routes/users')
+var userRouter = require ('./routes/users');
+var registerRouter = require ('./routes/register');
+var loginRouter = require ('./routes/users');
+var productAddRouter = require ('./routes/product');
+var searchResultsRouter = require ('./routes/searchResults');
+
 //Q odna////////////
 
 var app = express();
@@ -24,6 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use ('/users', userRouter );
+app.use ('/register', registerRouter );
+app.use ('/login', loginRouter );
+app.use ('/product-add', productAddRouter );
+app.use ('/searchResults', searchResultsRouter );
+
 
 
 // catch 404 and forward to error handler
