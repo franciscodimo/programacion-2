@@ -42,17 +42,37 @@
       <div class="row">
         <div class="col-12">
           <h2 class="products-title">Más comentados</h2>
+          <% for( let i = 0; i < product.length; i++ ) { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <section class="product-box">
+                <a href="/product/<%= i %> ">
+                  <figure class="product-box_image">
+                    <img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+                  </figure>
+                  <article class="product-box_data">
+                    <h2><%- product[i].nombre  %> </h2>
+                    <p><%- product[i].descripcion  %> </p>
+                    <p>Comentarios: tiene 99% de condicion de bateria</p>
+                  </article>
+                </a>
+              </section>
+            </div>
+          <% } %> 
+          
+          
+          
         </div>
-        
         <!-- Show the "ultimos" products -->
-        <div class="col-12 col-sm-6 col-lg-3">
+        
+    <!-- /Más comentados -->
+<div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
             <a href="/product">
               <figure class="product-box_image">
-                <img src="https://www.moulinex.com.ar/wp-content/uploads/2018/03/city-perfect-1-1024x1024.jpg" alt="cafetera moulinex">
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
               </figure>
               <article class="product-box_data">
-                <h2>cafetera</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -63,10 +83,10 @@
           <section class="product-box">
             <a href="/product">
               <figure class="product-box_image">
-                <img src="https://i.pinimg.com/originals/dd/62/38/dd62388b59c5fe5ff6c9ff31b35942e4.jpg" alt="cafetera moulinex">
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
               </figure>
               <article class="product-box_data">
-                <h2>Botines nike</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -77,10 +97,10 @@
           <section class="product-box">
             <a href="/product">
               <figure class="product-box_image">
-                <img src="https://ae01.alicdn.com/kf/Hd3f8d9d094cd41068937271910f5d41bT/MAZEL-Golf-hierros-palos-de-Golf-zurdo-7-Golf-individuales-de-hierro-para-hombres-Golf-suministros.jpg_Q90.jpg_.webp" alt="cafetera moulinex">
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
               </figure>
               <article class="product-box_data">
-                <h2>Palos de golf</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -91,10 +111,10 @@
           <section class="product-box">
             <a href="/product">
               <figure class="product-box_image">
-                <img src="https://industriaslitoral.com.ar/wp-content/uploads/sites/25/2020/12/b75f93_b7847e5dee17460a881ce4100be9890b_mv2.jpg" alt="cafetera moulinex">
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
               </figure>
               <article class="product-box_data">
-                <h2>Vaso de whisky</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -103,9 +123,6 @@
         </div>
       </div>
     </div>
-    <!-- /Más comentados -->
-  
-  
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- /footer -->
