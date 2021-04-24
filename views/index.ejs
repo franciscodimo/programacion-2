@@ -42,17 +42,41 @@
       <div class="row">
         <div class="col-12">
           <h2 class="products-title">Más comentados</h2>
+          <% for( let i = 0; i < product.length; i++ ) { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <section class="product-box">
+                <a href="/product/<%= i %> ">
+                  <figure class="product-box_image">
+                    <img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+                  </figure>
+                  <article class="product-box_data">
+                    <h2><%- product[i].nombre  %> </h2>
+                    <p><%- product[i].descripcion  %> </p>
+                    <p>Comentarios: tiene 99% de condicion de bateria</p>
+                  </article>
+                </a>
+              </section>
+            </div>
+          <% } %> 
+          
+          
+          
         </div>
-        
         <!-- Show the "ultimos" products -->
-        <div class="col-12 col-sm-6 col-lg-3">
+        
+    <!-- /Más comentados -->
+<div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
-            <a href="product.ejs">
+            <a href="/product">
               <figure class="product-box_image">
+<<<<<<< HEAD
                 <img src="https://www.dellapoletti.com/img/products/images/1892/51235.jpg" alt="cafetera moulinex">
+=======
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
+>>>>>>> 31faa276b1fd7cfdf4bdeec6b2c99de7b858446f
               </figure>
               <article class="product-box_data">
-                <h2>cafetera</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -61,12 +85,16 @@
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
-            <a href="product.ejs">
+            <a href="/product">
               <figure class="product-box_image">
+<<<<<<< HEAD
                 <img src="https://revistacar.es/wp-content/uploads/2018/03/Rolex-Oyster-Perpetual-GMT-Master-II-Revista-CAR-_1.jpg" alt="cafetera moulinex">
+=======
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
+>>>>>>> 31faa276b1fd7cfdf4bdeec6b2c99de7b858446f
               </figure>
               <article class="product-box_data">
-                <h2>Botines nike</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -75,12 +103,16 @@
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
-            <a href="product.ejs">
+            <a href="/product">
               <figure class="product-box_image">
+<<<<<<< HEAD
                 <img src="https://www.pauljamesjewellers.com/wp-content/uploads/2020/11/pjj0216-1000x1000.jpg" alt="cafetera moulinex">
+=======
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
+>>>>>>> 31faa276b1fd7cfdf4bdeec6b2c99de7b858446f
               </figure>
               <article class="product-box_data">
-                <h2>Palos de golf</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -89,12 +121,16 @@
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="product-box">
-            <a href="product.ejs">
+            <a href="/product">
               <figure class="product-box_image">
+<<<<<<< HEAD
                 <img src="https://cdn.theluxurycloset.com/uploads/opt/products/full/luxury-men-rolex-used-watches-p364463-001.jpg" alt="cafetera moulinex">
+=======
+                <img src="images/products/default-image.png" alt="cafetera moulinex">
+>>>>>>> 31faa276b1fd7cfdf4bdeec6b2c99de7b858446f
               </figure>
               <article class="product-box_data">
-                <h2>Vaso de whisky</h2>
+                <h2>Nombre del producto</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
                 <p>Comentarios: 12</p>
               </article>
@@ -103,9 +139,6 @@
         </div>
       </div>
     </div>
-    <!-- /Más comentados -->
-  
-  
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- /footer -->

@@ -1,0 +1,42 @@
+
+<%- include('./partials/header') %> 
+
+<body>
+	
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+
+			<div class="col-12">
+				<h2 class="products-title">Resultados de búsqueda</h2>
+
+			</div>
+			<% for( let i = 0; i < product.length; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				  <section class="product-box">
+					<a href="/product/<%= product[i].id %> ">
+					  <figure class="product-box_image">
+						<img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+					  </figure>
+					  <article class="product-box_data">
+						<h2><%- product[i].nombre  %> </h2>
+						<p><%- product[i].descripcion  %> </p>
+						<p>Comentarios: tiene 99% de condicion de bateria</p>
+					  </article>
+					</a>
+				  </section>
+				</div>
+			  <% } %> 
+			</div>
+              </div>
+		
+		
+
+
+	<!-- footer -->
+  
+	<%- include('./partials/footer') %> 
+	<!-- /footer -->
+</body>
+
+</html>
