@@ -11,11 +11,7 @@ let products = [
     Valor: "consultar",
     descripcion:"nuevo",
     tipo: "electrodomestico",
-<<<<<<< HEAD
     imagen:"https://media.revistagq.com/photos/5f0c44768c6c2847199b38d3/master/w_1000,c_limit/relojes-rolex-datejust.jpg"
-=======
-    imagen:"https://i.pinimg.com/originals/22/d3/6e/22d36eac98bb5e33f5b68379d6b65f3e.jpg"
->>>>>>> 31faa276b1fd7cfdf4bdeec6b2c99de7b858446f
 },{
     id:2,
     nombre: "pelota de futbol",
