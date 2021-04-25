@@ -9,7 +9,7 @@ var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users');
 var registerRouter = require ('./routes/register');
 var loginRouter = require ('./routes/users');
-var productAddRouter = require ('./routes/product');
+var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
 
 //Q odna////////////

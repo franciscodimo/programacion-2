@@ -1,5 +1,4 @@
 <head>
-	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
@@ -12,48 +11,44 @@
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
-
-
 	
 <body>
 	<!-- Header -->
 	<header class="main-header">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-5 col-md-2" style="margin-right: 120px;">
+				<div class="col-5 col-md-2">
 					<a href="http://localhost:3000/" class="main-header_home-link">
 						<img src="/images/Rolex-Emblema.jpg">
-						
 					</a>
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="/searchResults" method="GET" class="search-form">
+					<form action="" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
+	
 				<div class="col-12 col-md-4">
-					
+					<a class="main-header_credit-link">
+						<i class="fas fa-hand-holding-usd"></i>
+						Todas las opiniones en un solo lugar.
+					</a>
 				</div>
 			</div>
 	
-			
-	         <nav>
-				<ul class="right-navbar">
-					<% if(logueado) { %>
-						<%- include('headerLogueado') %> 
-					<% } else { %>
-						<%- include('headerDeslogueado') %> 
-					<% } %>
-					
-					
-				</ul>
-				
+			<button class="btn-toggle-navbar">
+				<i class="fas fa-bars"></i>
+			</button>
+	
+			<nav class="main-navbar">
+				<% if(logueado) { %>
+					<%- include('headerLogueado') %> 
+				<% } else { %>
+					<%- include('headerDeslogueado') %> 
+				<% } %>
 			</nav>
 		</div>
 	</header>
 	<!-- /Header -->
-
-
-</html> 
