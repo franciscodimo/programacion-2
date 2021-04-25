@@ -8,13 +8,14 @@
 	<!-- product detail -->
 <!-- product detail -->
 <div class="container products-wrapper">
-	<div class="d-flex align-items-center">
-		<h2 class="product-title"><%- product.nombre %> </h2> 
-		<p class="product-detail-description"></p>
-			<a href="/product/product-add">Editar</a>
-		</p>
-	</div>
+	
 	<div class="product-detail">
+		<div class="d-flex align-items-center">
+			<h2 class="product-title"><%- product.nombre %> </h2> 
+			<p class="product-detail-description"></p>
+				<a href="/product/product-add">Editar</a>
+			</p>
+		</div>
 		<div class="row">
 			<article class="col-12 col-lg-8 product-detail-info">
 				<img src="<%- product.imagen  %> " alt="" class="product-detail-img">
