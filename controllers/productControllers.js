@@ -6,14 +6,7 @@ let productController = {
 			product:products[req.params.id],
 
 		})
-	},
-	productAdd: function(req,res){
-		res.render('product-add',{
-			products:products,
-			logueado:true
-		})
-	}
-}
+	}}
 
 
   module.exports = productController;
