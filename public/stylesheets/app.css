@@ -208,47 +208,7 @@ hr {
   45%{margin-left: -100%;}
   
 }
-/*.menu{
-  padding-top: 50px;
-  list-style: none;
-  text-align: center;
-  margin: 20px;
-}
-.menu li{
-  display: inline-block;
-  text-align: center;
-}
 
-.menu li a{
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  background-color: rgb(0, 120, 50);
-  padding: 10px;
-  width: 20px;
-  height: 20px;
-  font-size: 10px;
-  border-radius: 10%;
-}
-.slider li{
-  position: absolute;
-  opacity: 1;
-  transition: opacity .5s;
-}
-
-ul.slider li img{
-  width: 100%;
-  object-fit: cover;
-}
-
-ul.slider li:first-child{
-  opacity: 1;
-}
-
-ul.slider.li:target{
-  opacity: 1;
-}
-*/
 /*====== Products ======*/
 .product-detail-description{
   font-family: var(--base-font-family);
@@ -260,6 +220,9 @@ ul.slider.li:target{
   margin-top: 30px;
   margin-bottom: 30px;
   color: var(--blanco);
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
 }
 .product-title{
   color: rgb(0, 96, 58);
@@ -269,7 +232,7 @@ ul.slider.li:target{
 }
 .products-title1 {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   font-size: 4.4em;
   font-weight: 400;
   color: var(--blanco);
@@ -595,6 +558,22 @@ textarea.form-input {
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
+}
+
+.edit-product-form{
+  padding-left: 220px;
+  align-items: center;
+}
+
+.login-form{
+  padding-left: 300px;
+}
+.register-css{
+  padding-left: 375px;
+  margin-bottom: -175px;
+}
+.register-css form{
+  padding: 30px;
 }
 
 
