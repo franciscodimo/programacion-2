@@ -12,6 +12,7 @@
 
 			</div>
 			<% for( let i = 0; i < product.length; i++ ) { %>
+				<% if(search == product[i].nombre){ %>
 				<div class="col-12 col-sm-6 col-lg-3">
 				  <section class="product-box">
 					<a href="/product/<%= product[i].id %> ">
@@ -26,7 +27,9 @@
 					</a>
 				  </section>
 				</div>
+			    <% } %>
 			  <% } %> 
+			   
 			</div>
               </div>
 		
