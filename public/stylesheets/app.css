@@ -191,7 +191,7 @@ hr {
 }
 .banner ul{
   display: flex;
-  animation: cambio 20s infinite alternate linear;
+  animation: cambio 15s infinite alternate linear;
   width: 200%;  
 }
 .banner li{
