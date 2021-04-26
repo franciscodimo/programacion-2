@@ -40,7 +40,7 @@ let products = [
 },
 {
     id:5,
-    nombre:"Submarine 4",
+    nombre:"Submariner 4",
     Valor:"Consultar",
     descripcion:"Water proof",
     tipo:"Tecnologia",
