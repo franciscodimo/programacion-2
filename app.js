@@ -8,9 +8,9 @@ var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users');
 var registerRouter = require ('./routes/register');
-var loginRouter = require ('./routes/users');
 var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
+var profileRouter = require ('./routes/profile');
 
 //Q odna////////////
 
@@ -30,10 +30,15 @@ app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use ('/users', userRouter );
 app.use ('/register', registerRouter );
-app.use ('/login', loginRouter );
+app.use ('/login', userRouter );
 app.use ('/product-add', productAddRouter );
 app.use ('/searchResults', searchResultsRouter );
+app.use ('/profileEdit', userRouter );
+app.use ('/profile', profileRouter );
 
+
+
+// ya se que esto va en las rutas pero no tenia tiempo de arreglarlo
 
 
 // catch 404 and forward to error handler

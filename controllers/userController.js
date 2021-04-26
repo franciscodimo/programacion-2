@@ -1,13 +1,6 @@
 var products = require ('../modules/product')
 
 let userController = {
-    profile: function(req, res) {
-        res.render('profile' ,{
-            products:products,
-            logueado:true
-        } )
-        
-    },
   register: function(req,res){
     res.render('register' ,{
         products:products,
@@ -20,7 +13,6 @@ let userController = {
         logueado:false
     } )
   }
-  
 }
 
 module.exports = userController;
