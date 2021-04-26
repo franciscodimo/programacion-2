@@ -11,12 +11,43 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para agregar prodcutos al catálogo. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<!-- <section>
+				<div class="add-product-form">
+					<div class="data">
+						<label for="name">Name:</label>
+						<input type="text" id="name" placeholder="Item name..."/>
+						<label for="category">Category:</label>
+						<input type="text" id="category" placeholder="Category..."/>
+						<label for="price">Price:</label>
+						<input type="text" id="price" placeholder="0.00"/>
+					</div>
+					<div class="panel">
+						<button id="add-product-button" class="button">Add</button>
+						<a href="#/products">
+							<button class="button" id="cancel-button">Cancel</button>
+						</a>
+					</div>
+				</div>
+			</section> -->
+			<section>
+    <div class="edit-product-form">
+        <header class="main-header">Edit product</header>
+        <div class="data">
+            <label for="item-name">Name:</label>
+            <input type="text" id="item-name" value="{{name}}" placeholder="Name..."/>
+            <label for="category">Category:</label>
+            <input type="text" id="category" value="{{category}}" placeholder="Category..."/>
+            <label for="price">Price:</label>
+            <input type="text" id="price" value="{{price}}" placeholder="0.00"/>
+        </div>
+        <div class="panel">
+            <button id="edit-product-button" class="button" data-id="{{objectId}}">Edit</button>
+            <a href="#/products">
+                <button class="button">Cancel</button>
+            </a>
+        </div>
+    </div>
+</section>
 
 
 	<!-- footer -->
