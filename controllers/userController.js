@@ -12,7 +12,7 @@ let userController = {
         products:products,
         logueado:false
     } )
-  }
+  },
 }
 
 module.exports = userController;
