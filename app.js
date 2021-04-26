@@ -10,7 +10,7 @@ var userRouter = require ('./routes/users');
 var registerRouter = require ('./routes/register');
 var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
-var profileRouter = require ('./routes/searchResults');
+var profileRouter = require ('./routes/profile');
 
 //Q odna////////////
 
