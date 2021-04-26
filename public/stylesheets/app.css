@@ -215,6 +215,7 @@ hr {
   font-style: italic;
   font-size: 10px;
 }
+.comments
 
 .products-wrapper {
   margin-top: 30px;
@@ -481,6 +482,7 @@ hr {
 .comments {
   padding: px 15px 15px 0;
   padding-right: 20px;
+  font-size: 10px;
 }
 .comments article{
   margin-bottom: 7.5px;
@@ -561,19 +563,51 @@ textarea.form-input {
 }
 
 .edit-product-form{
-  padding-left: 220px;
-  align-items: center;
+  padding: 30px;
+  padding-left: 280px;
 }
 
 .login-form{
   padding-left: 300px;
 }
+.panel{
+  text-align: center;
+}
+
+/*======= Registrate =======*/
+.registrate-title{
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
 .register-css{
   padding-left: 375px;
-  margin-bottom: -175px;
+  margin-bottom: -100px;
+  text-align: center;
+  
+  
 }
 .register-css form{
+  padding: 30px; 
+}
+
+/* ======== Login ========*/
+.ingresa-title{
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+.login-form{
   padding: 30px;
+text-align: center;
+margin-left: 300px;
+}
+
+/* ======== Agregar producto ========*/
+.agregar-title{
+  color: white;
+  text-align: center;
+  font-size: 30px;
 }
 
 

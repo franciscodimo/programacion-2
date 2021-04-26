@@ -17,7 +17,7 @@ let products = [
     id:2,
     nombre:"Sounder",
     Valor:"Consultar",
-    descripcion:"",
+    descripcion:"Solo haz ruido y te dira la hora",
     tipo:"Deporte",
     imagen: "https://content.rolex.com/dam/2021/upright-bba-with-shadow/m126711chnr-0002.png?impolicy=v6-upright&imwidth=270"
 },
