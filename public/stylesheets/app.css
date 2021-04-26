@@ -309,12 +309,20 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+.mas-comentado{
+  text-align: center;
+}
+.col-12.col-sm-6.col-lg-3{
+  align-items: center;
+
+}
+
 
 /*====== Footer ======*/
 .main-footer {
   background-color: var(--azul);
   padding: 20px 0;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .footer-data {
@@ -353,7 +361,7 @@ hr {
 /*====== Product Detail ======*/
 .product-detail {
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
   font-family: cursive;
 }
