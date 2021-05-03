@@ -4,7 +4,7 @@ const fs = require('fs'); //fail server o sistem es una libreria para leer archi
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development'; //env se refiere a enviroment variable entorno
+const env = 'development'; //env se refiere a enviroment variable entorno
 const config = require(__dirname + '/../config/config.js')[env]; //nos dicen donde estan los archivos
 const db = {}; //objeto literal y lo devuelve y luego es exportado abajo de todo con el module exports 
 
