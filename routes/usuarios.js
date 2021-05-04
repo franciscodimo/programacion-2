@@ -5,7 +5,7 @@ const db = require ('../database/models');
 
 /*GET home page*/
 
-router.get('/demo', function (req, res){
+router.get('/', function (req, res){
         let usuario = db.usuarios.findAll()
         .then((data) => {
             return res.send(data)

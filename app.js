@@ -11,7 +11,10 @@ var registerRouter = require ('./routes/register');
 var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
-var usuarioRouter = require('./routes/demo');
+var usuariosRouter = require('./routes/usuarios');
+var productosRouter = require('./routes/productos');
+var categoriasRouter = require('./routes/categorias');
+var comentariosRouter = require('./routes/comentarios');
 
 //Q odna////////////
 
@@ -37,7 +40,11 @@ app.use ('/product-add', productAddRouter );
 app.use ('/searchResults', searchResultsRouter );
 app.use ('/profileEdit', userRouter );
 app.use ('/profile', profileRouter );
-app.use ('/', usuarioRouter)
+app.use ('/usuarios', usuariosRouter);
+app.use ('/productos', productosRouter);
+app.use ('/categorias', categoriasRouter);
+app.use ('/comentarios', comentariosRouter);
+
 
 
 // ya se que esto va en las rutas pero no tenia tiempo de arreglarlo
