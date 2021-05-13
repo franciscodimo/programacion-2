@@ -12,7 +12,6 @@ var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
-var productosRouter = require('./routes/productos');
 var categoriasRouter = require('./routes/categorias');
 var comentariosRouter = require('./routes/comentarios');
 
@@ -41,7 +40,6 @@ app.use ('/searchResults', searchResultsRouter );
 app.use ('/profileEdit', userRouter );
 app.use ('/profile', profileRouter );
 app.use ('/usuarios', usuariosRouter);
-app.use ('/productos', productosRouter);
 app.use ('/categorias', categoriasRouter);
 app.use ('/comentarios', comentariosRouter);
 
