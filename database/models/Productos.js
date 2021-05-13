@@ -1,4 +1,5 @@
 //los modelos son pedasos de codigo que describen como van a ser nuestras entidades u objeto de negocio
+
 module.exports = (sequelize, DataTypes) =>{
     let alias = 'productos';
     let cols = {

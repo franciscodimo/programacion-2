@@ -1,11 +1,18 @@
-var products = require ('../modules/product')
+let db = require("../database/models");
 let productController = { 
-	producto: function(req,res) {
-		res.render('product', {
-			logueado:true,
-			product:products[req.params.id],
-
+	product: function (req, res) {
+            
+		var id =  req.params.id
+		db.productos.findByPk(id)
+		.then((data) => {
+			return res.render('/product', { 
+				product: data 
+			});
 		})
+
+	.catch((error) => {
+		return res.send(error);
+	})
 	}}
 
 

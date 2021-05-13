@@ -1,9 +1,19 @@
-var products = require ('../modules/product')
+let db = require("../database/models");
 let productAddController = {
 productAdd: function(req,res){
-    res.render('product-add',{
-        products:products,
-        logueado:true
-    })
-}}
+        db.productos.create(req.body)
+
+        .then(() => {
+            return res.redirect('/productos');
+        })
+
+        .catch((error) => {
+            return res.send(error);
+        })},
+
+
+
+
+    
+}
 module.exports = productAddController;

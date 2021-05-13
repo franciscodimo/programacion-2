@@ -1,4 +1,5 @@
 'use strict';
+//este index module nos va a permitir correr todos los modulos consecuentes de la base de datos
 
 const fs = require('fs'); //fail server o sistem es una libreria para leer archivos
 const path = require('path');
