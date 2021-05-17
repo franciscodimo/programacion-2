@@ -2,9 +2,8 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session = require ('express-session');  
 var logger = require('morgan');
-var cookieParser = require ('cookie-parser');
-var session = require ('express-session');
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
@@ -16,7 +15,7 @@ var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
 var categoriasRouter = require('./routes/categorias');
 var comentariosRouter = require('./routes/comentarios');
-var securityRouter = require ('./routes/security');
+var securityRouter = require('./routes/security');
 
 //Q odna////////////
 
@@ -30,14 +29,34 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use (session(
+  { secret : 'Nuestro mensaje secreto',
+   resave: false,
+   saveUninitialized: true })),
 app.use(express.static(path.join(__dirname, 'public')));
+
+const publicRoutes = [
+  '/','/login', '/register', '/product', '/searchResults'
+]
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals = req.session.user
+    next();
+  } else {
+    if (!publicRoutes.includes(req.path)){
+      return res.redirect('/login')
+    }
+  }
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use('/productEdit', productRouter);
 app.use ('/users', userRouter );
-app.use ('/register', registerRouter );
-app.use ('/login', userRouter );
+app.use ('./register', registerRouter );
+app.use ('./login', userRouter );
 app.use ('/product-add', productAddRouter );
 app.use ('/searchResults', searchResultsRouter );
 app.use ('/profileEdit', userRouter );

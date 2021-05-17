@@ -43,7 +43,7 @@
 			</button>
 	
 			<nav class="main-navbar">
-				<% if(locals.email) { %>
+				<% if(locals.user) { %>
 					<%- include('headerLogueado') %> 
 				<% } else { %>
 					<%- include('headerDeslogueado') %> 

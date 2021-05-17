@@ -2,11 +2,12 @@ let db = require("../database/models");
 
 let usersController = {
     index: function (req, res) {
-        db.User.findAll()
+        db.usuarios.findAll()
         .then((data) => {
-            return res.render('users', { 
+            /*return res.render('users', { 
                 users: data 
-            });
+            });*/
+            return res.send (data)
         })
         .catch((error) => {
             return res.send(error);

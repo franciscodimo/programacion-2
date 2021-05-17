@@ -2,12 +2,12 @@ let db = require("../database/models");
 let indexController = { 
 	index: function (req, res) {
 		db.productos.findAll({
-		limit: 5
+		limit: 8
 		})
 
 		.then((data) => {
-			return res.render('/index', {
-				products: data
+			return res.render('index', {
+				product: data
 			})
 		})
 
@@ -15,8 +15,6 @@ let indexController = {
 			return res.send(error);
 		})}}
 	
-	
-
 
 
   module.exports = indexController;

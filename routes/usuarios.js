@@ -1,12 +1,13 @@
 module.exports = router;
 var express = require ('express');
+const usersController = require('../controllers/userController');
 var router = express.Router();
 const db = require ('../database/models');
 
 /*GET home page*/
 
-router.get('/', function (req, res){
-        let usuario = db.usuarios.findAll()
+router.get('/', usersController.index) /*{
+        let usuarios = db.usuarios.findAll()
         .then((data) => {
             return res.send(data)
 
@@ -15,5 +16,5 @@ router.get('/', function (req, res){
             return res.send(error)
         })
 })
-
+*/
 module.exports = router

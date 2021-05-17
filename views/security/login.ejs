@@ -1,0 +1,48 @@
+<%- include('./partials/header') %> 
+<body>
+	<!-- Header -->
+	
+	
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="ingresa-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<section>
+				<div class="login-form">
+					
+					<div class="data">
+						<form method= 'POST'>
+							<label for="username">nombre:</label>
+							<input type="text" id="username" placeholder="Username..."/>
+							<label for="username">apellido:</label>
+							<input type="text" id="apellido" placeholder="apellido..."/>
+							<label for="username">Fecha de naciomiento:</label>
+							<input type="text" id="username" placeholder="Username..."/>
+							<label for="password">Password:</label>
+							<input type="password" id="password" placeholder="Password..."/>
+							<input type="submit" value="submit">
+						</form>
+						
+					</div>
+					<div class="panel">
+						<button id="login-button" class="button">Login</button>
+						<span>or</span>
+						<a href="#/registration">Register</a>
+					</div>
+				</div>
+			</div>
+		</div>	
+			</section> 
+
+
+	<!-- footer -->
+	<%- include('./partials/footer') %> 
+	<!-- /footer -->
+</body>
+
+</html>
