@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cookieParser = require ('cookie-parser');
+var session = require ('express-session');
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
@@ -14,6 +16,7 @@ var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
 var categoriasRouter = require('./routes/categorias');
 var comentariosRouter = require('./routes/comentarios');
+var securityRouter = require ('./routes/security');
 
 //Q odna////////////
 
@@ -42,6 +45,7 @@ app.use ('/profile', profileRouter );
 app.use ('/usuarios', usuariosRouter);
 app.use ('/categorias', categoriasRouter);
 app.use ('/comentarios', comentariosRouter);
+app.use ('/', securityRouter);
 
 
 
