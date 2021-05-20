@@ -15,18 +15,7 @@
       </div>
       
     <!-- /Banner -->
-  <!-- <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    
-  </head>
-  <body>
-    <h1><%= title  %> </h1>
-    <p>welcome <%= locals.user ? user.name : ''  %> (<a href="/logout">Logout</a>) </p>
-  </body>
-  </html> -->
+  
     <!-- Novedades -->
     <div class="container products-wrapper">
       <div class="row">
@@ -35,16 +24,16 @@
         </div>
         <!-- Show the "ultimos" products -->
         
-        <% for( let i = 0; i < product.length; i++ ) { %>
+        <% for( let i = 0; i < productos.length; i++ ) { %>
           <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
               <a href="/product/<%= i %> ">
                 <figure class="product-box_image">
-                  <img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+                  <img src="<%- productos[i].imagen  %> " alt="cafetera moulinex">
                 </figure>
                 <article class="product-box_data">
-                  <h2 style="font-size: 20px; color: white;"><%- product[i].nombre  %> </h2>
-                  <p style="font-size: 16px;"><%- product[i].descripcion  %> </p>
+                  <h2 style="font-size: 20px; color: white;"><%- productos[i].nombre  %> </h2>
+                  <p style="font-size: 16px;"><%- productos[i].descripcion  %> </p>
                   <p style="font-size: 10px;">Comentarios: tiene 99% de condicion de bateria</p>
                 </article>
               </a>  
