@@ -11,7 +11,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title">Nombre del usuario 
+					<h1 class="main-title"> <%= locals.user ? user.nombre : '' %> 
 						<a href="/profileEdit">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -20,7 +20,7 @@
 				</div>
 				<div>
 					<ul class="">
-						<li>8 productos</li>
+						<li><%= productos.length  %>  productos</li>
 						<li>200 seguidores</li>
 						<li>300 comentarios</li>
 					</ul>
@@ -36,16 +36,16 @@
 			<div class="col-12">
 				<h2 class="products-title">Mis productos</h2>
 			</div>
-			<% for( let i = 0; i < products.length; i++ ) { %>
+			<% for( let i = 0; i < productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 				  <section class="product-box">
 					<a href="/product/<%= i %> ">
 					  <figure class="product-box_image">
-						<img src="<%- products[i].imagen  %> " alt="cafetera moulinex">
+						<img src="<%- productos[i].imagen  %> " alt="cafetera moulinex">
 					  </figure>
 					  <article class="product-box_data">
-						<h2><%- products[i].nombre  %> </h2>
-						<p><%- products[i].descripcion  %> </p>
+						<h2><%- productos[i].nombre  %> </h2>
+						<p><%- productos[i].descripcion  %> </p>
 						<p>Comentarios: tiene 99% de condicion de bateria</p>
 					  </article>
 					</a>

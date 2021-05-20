@@ -1,4 +1,5 @@
 let db = require('../database/models');
+const bcrypt = require ('bcriptjs')
 
 let securityController = {
                             login: function (req, res) {
@@ -20,6 +21,8 @@ let securityController = {
                             register: function(req,res){
                                 if (req.method == 'POST');
                                 db.user.create(req.body)
+                                
+
                         
                                 .then(() => {
                                     return res.redirect('/');
