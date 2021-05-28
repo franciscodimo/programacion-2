@@ -9,26 +9,27 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="ingresa-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<section>
 				<div class="login-form">
 					
 					<div class="data">
-						<form method= 'POST'>
-							<label for="username">nombre:</label>
-							<input type="text" id="username" placeholder="Username..."/>
-							<label for="username">apellido:</label>
-							<input type="text" id="apellido" placeholder="apellido..."/>
-							<label for="username">Fecha de nacimiento:</label>
-							<input type="text" id="username" placeholder="Username..."/>
-							<label for="password">email:</label>
-							<input type="password" id="password" placeholder="Password..."/>
-                            <label for="password">telefono:</label>
-							<input type="telefono" id="telefono" placeholder="telefono..."/>
-							<input type="submit" value="Crear">
-						</form>
+						<form method="POST">
+							<label for="email" style="font-size:large; color: white;">Email:</label><br>
+							<input type="text" id="email" name="email" style="margin-top: 10px; padding-top: 10px; margin-bottom: 20px;"> <br>
+							<label for="password" style="color: white; font-size:large;">Password:</label><br>
+							<input type="password" id="password" name="password" style="margin-top: 10px; padding-top: 10px;"><br>
+							<h2 style="font-size:x-small; color: white;"><a href="mail.google.com"> Forgot your password?</a></h2>
+							<input type="checkbox" id="rememberme" name="rememberme" style="margin-top: 10px; ">
+							<label for="rememberme" style = "color: white; font-size:medium;">Rememberme</label><br><br>
+							<input type="submit" value="Submit">
+							
+							<% if (locals.error) { %>
+							  <span style="color:red"><%= locals.error %></span>
+							<% } %>
+						  </form>
+						  
 						
 					</div>
 					
