@@ -7,14 +7,14 @@ let securityController = {
                                     failed: req.query.failed
                                 });
                             },
-                            authenticate: function (req, res) {
-                                db.usuarios.findOne({where : {email : req.body.email}})
-                                .then((user)=> {
-                                    if (bcrypt.hashSync(req.body.password) == usuarios.password){
-                                        req.session.user = user;
-                                        if (req.body.rememberme){
-                                            res.cookie('userId', user.id, {maxAge: 1000 * 60 * 60 * 24 * 365 /*(un anio)*/ }) 
-                                        }
+                              authenticate: function (req, res) {
+                                    db.usuarios.findOne({ where: { email: req.body.email } })
+                                    .then((data) => {
+                                    if (bcrypt.compareSync(req.body.password, user.password)) {
+                                    req.session.data = data;
+                                    if(req.body.rememberme) {
+                                     res.cookie('userId', usuario.id)
+                                     }            
                                         
                                         
                                         return res.redirect('/');
@@ -25,19 +25,22 @@ let securityController = {
                                     throw error
                                 })
                             },
-                            register: function(req,res){
-                                req.body.password = bcrypt.hashSync(req.body.password)
-                                if (req.method == 'POST');
-                                db.user.create(req.body)
+                            register: function (req, res) {
+                                if (req.method == 'POST') {
+                                   
+                                    db.usuarios.create(req.body)
+                                    .then(() => {
+                                        return res.redirect('/')
+                                    })
+                                    .catch((error) => {
+                                        return res.send(error);
+                                    })
+                                }
                         
-                                .then(() => {
-                                    return res.redirect('/');
-                                })
-                        
-                                .catch((error) => {
-                                   throw error
-                                })  
-                            },
+                                if (req.method == 'GET') {
+                                    return res.render('security/register');
+                                }},
+                            
                             logout: function(req, res){
                                 req.session.destroy ();
                                 res.clearCookie('userId')

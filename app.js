@@ -40,13 +40,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 const publicRoutes = [
   '/','/login', '/register', '/product', '/searchResults'
 ]
+
 app.use(function(req, res, next){
   if(req.session.user != undefined){
-    res.locals.user = req.session.user
-    next();
+    res.locals.user = req.session.user;
   } else {
-    if (!publicRoutes.includes(req.path)){
-      return res.redirect('/login')
+    if (!publicRoutes.includes(req.path)) {
+      return res.redirect('/')
     }
   }
   next();

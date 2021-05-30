@@ -151,8 +151,7 @@ hr {
   align-items: center;
   color: white;
   font-size: 1.8em;
-  padding-left: 778px;
-  
+  padding-left: 778px;  
 }
 .right-navbar {
   align-items: center;
@@ -572,13 +571,36 @@ textarea.form-input {
   padding-left: 280px;
 }
 
-.login-form{
-  text-align: center;
-  margin-left: 38vh;
+.register-form{
+ width: 470px;
+ padding: 30px;
+ margin: auto;
+ border-radius: 4px;
+ padding-top: 5px;
+ margin-right: 335px;
 }
+
+.formss{
+  width: 100%;
+  background-color: rgba(0, 96, 58, 0.616);
+  padding: 10px;
+  border-radius: 1px;
+  margin-bottom: 10px;
+  border: 2px solid white;
+  color: white;
+
+}
+
 .panel{
   text-align: center;
 }
+
+.obligatorio{
+  font-size: 13px;
+  color: white;
+  padding-left: 145px;
+  color: gray;
+} 
 
 /*======= Registrate =======*/
 .registrate-title{
@@ -597,17 +619,44 @@ textarea.form-input {
   padding: 30px; 
 }
 
+.nacimiento{
+  font-size: 13px;
+  color: white;
+  padding-left: 170px ;
+}
+
 /* ======== Login ========*/
-.ingresa-title{
+.login-tittle{
   color: white;
   text-align: center;
   font-size: 30px;
 }
 .login-form{
-  padding: 30px;
-  text-align: center;
-  padding-left: 47vh;
+  
+  margin-left: 320px;
 }
+
+.login-form{
+  width: 470px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  padding-top: 5px;
+  margin-right: 335px;
+  margin-left: 335px;
+ }
+
+ .contraseña-olvidada{
+   padding-left: 150px;
+   color: white;
+   font-style: italic;
+ }
+ 
+ .recordame{
+   padding-left: 150px;
+   color: white;
+   font-size: 13px;
+ }
 
 /* ======== Agregar producto ========*/
 .agregar-title{
@@ -621,7 +670,7 @@ textarea.form-input {
 @media (min-width: 768px) {
   .main-header_credit-link {
     margin-top: 0;
-    text-align: right;
+    margin-left: 65px;
   }
 
   .banner {

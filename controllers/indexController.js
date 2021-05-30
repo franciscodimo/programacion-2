@@ -2,7 +2,7 @@ let db = require("../database/models");
 let indexController = { 
 	index: function (req, res) {
 		db.productos.findAll({
-		limit: 8
+		limit: 8	
 		})
 
 		.then((data) => {

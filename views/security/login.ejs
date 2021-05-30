@@ -12,18 +12,17 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<section>
+				<h2 class="login-tittle" >Login</h2>
 				<div class="login-form">
 					
 					<div class="data">
 						<form method="POST">
-							<label for="email" style="font-size:large; color: white;">Email:</label><br>
-							<input type="text" id="email" name="email" style="margin-top: 10px; padding-top: 10px; margin-bottom: 20px;"> <br>
-							<label for="password" style="color: white; font-size:large;">Password:</label><br>
-							<input type="password" id="password" name="password" style="margin-top: 10px; padding-top: 10px;"><br>
-							<h2 style="font-size:x-small; color: white;"><a href="mail.google.com"> Forgot your password?</a></h2>
-							<input type="checkbox" id="rememberme" name="rememberme" style="margin-top: 10px; ">
-							<label for="rememberme" style = "color: white; font-size:medium;">Rememberme</label><br><br>
-							<input type="submit" value="Submit">
+							<input class="formss" type="text" id="username" name="email" placeholder="Email"> <br>
+							<input class="formss" type="password" id="password" name="password" placeholder="Password"> <br>
+							<h3 class="contraseña-olvidada"><a href="mail.google.com"> Forgot your password?</a></h3>
+							<div class="recordame"><input class="formss-2" type="checkbox" id="rememberme" name="rememberme">
+							<label for="rememberme" >Remember me</label><br><br></div>
+							<input class="formss" type="submit" value="Sign in">
 							
 							<% if (locals.error) { %>
 							  <span style="color:red"><%= locals.error %></span>
