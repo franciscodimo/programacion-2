@@ -12,7 +12,7 @@ let securityController = {
                                     .then((data) => {
                                     if (bcrypt.compareSync(req.body.password, user.password)) {
                                     req.session.data = data;
-                                    if(req.body.rememberme) {
+                                     if(req.body.rememberme) {
                                      res.cookie('userId', usuario.id)
                                      }            
                                         
