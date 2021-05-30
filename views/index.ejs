@@ -24,7 +24,7 @@
         </div>
         <!-- Show the "ultimos" products -->
         
-        <% for( let i = 0; i < product.length; i++ ) { %>
+        <% for( let i = 0; i < productos.length; i++ ) { %>
           <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
               <a href="/product/<%= i %> ">
@@ -32,8 +32,8 @@
                   <img src="<%- product[i].url_imagen  %> " alt="cafetera moulinex">
                 </figure>
                 <article class="product-box_data">
-                  <h2 style="font-size: 20px; color: white;"><%- product[i].nombre  %> </h2>
-                  <p style="font-size: 16px;"><%- product[i].descripcion  %> </p>
+                  <h2 style="font-size: 20px; color: white;"><%- productos[i].nombre  %> </h2>
+                  <p style="font-size: 16px;"><%- productos[i].descripcion  %> </p>
                   <p style="font-size: 10px;">Comentarios: tiene 99% de condicion de bateria</p>
                 </article>
               </a>  

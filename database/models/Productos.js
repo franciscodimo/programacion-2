@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) =>{
             type: DataTypes.STRING
         },
         usuario_id:{
-            type: DataTypes.BOOLEAN
+            type: DataTypes.INTEGER
         },
         nombre:{
             type: DataTypes.STRING
