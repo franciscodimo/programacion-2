@@ -9,11 +9,11 @@ let securityController = {
                             },
                               authenticate: function (req, res) {
                                     db.usuarios.findOne({ where: { email: req.body.email } })
-                                    .then((data) => {
+                                    .then((user) => {
                                     if (bcrypt.compareSync(req.body.password, user.password)) {
-                                    req.session.data = data;
+                                    req.session.user = user;
                                      if(req.body.rememberme) {
-                                     res.cookie('userId', usuario.id)
+                                     res.cookie('userId', user.id)
                                      }            
                                         
                                         

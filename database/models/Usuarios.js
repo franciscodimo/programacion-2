@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) =>{
 // }, //si trbajamos con nomnclatura generica, no hace falta hacer el let configs
 
     let configs = {
-        tableName: 'usuarios',
+        tableName: 'usuario',
         timestamps: false,
     }
     const Usuarios = sequelize.define(alias, cols, configs);
