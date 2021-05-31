@@ -8,13 +8,13 @@ let securityController = {
                                 });
                             },
                               authenticate: function (req, res) {
-                                    db.usuarios.findOne({ where: { email: req.body.email } })
+                                db.usuarios.findOne({ where: { email: req.body.email } })
                                     .then((user) => {
-                                    if (bcrypt.compareSync(req.body.password, user.password)) {
-                                    req.session.user = user;
-                                     if(req.body.rememberme) {
-                                     res.cookie('userId', user.id)
-                                     }            
+                                        if (bcrypt.compareSync(req.body.password, user.password)) {
+                                            req.session.user = user;
+                                        if(req.body.rememberme) {
+                                            res.cookie('userId', user.id)
+                                        }            
                                         
                                         
                                         return res.redirect('/');
@@ -22,12 +22,12 @@ let securityController = {
                                     res.redirect('/login?failed=true');
                                 })
                                 .catch((error) => {
-                                    throw error
+                                    res.redirect('/login?failed=true');
                                 })
                             },
                             register: function (req, res) {
                                 if (req.method == 'POST') {
-                                   
+                                    req.body.password = bcrypt.hashSync(req.body.password);
                                     db.usuarios.create(req.body)
                                     .then(() => {
                                         return res.redirect('/')
@@ -40,7 +40,7 @@ let securityController = {
                                 if (req.method == 'GET') {
                                     return res.render('security/register');
                                 }},
-                            
+
                             logout: function(req, res){
                                 req.session.destroy ();
                                 res.clearCookie('userId')
