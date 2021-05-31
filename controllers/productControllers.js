@@ -5,7 +5,7 @@ let productController = {
 		var id =  req.params.id
 		db.productos.findByPk(id)
 		.then((data) => {
-			return res.render('/product', { 
+			return res.render('product', { 
 				product: data 
 			});
 		})
