@@ -4,6 +4,7 @@ let indexController = {
 		db.productos.findAll({
 		limit: 12	
 		})
+		
 
 		.then((data) => {
 			return res.render('index', {
