@@ -55,7 +55,7 @@ app.use(function(req, res, next){
 
 app.use(function(req, res, next){
   if(req.cookies.userId != undefined && req.session.user == undefined){
-    db.User.findByPk(req.cookies.userId)
+    db.usuario.findByPk(req.cookies.userId)
     .then( user => {
       req.session.user = user;
       return next();
