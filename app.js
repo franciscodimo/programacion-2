@@ -45,12 +45,8 @@ app.use(function(req, res, next){
   if(req.session.user != undefined){
     res.locals.user = req.session.user
     next();
-  } else {
-    if (!publicRoutes.includes(req.path)) {
-      return res.redirect('/')
-    }
-  }
-  next();
+  } 
+  else { next();}
 });
 
 app.use(function(req, res, next){
