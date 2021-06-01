@@ -64,7 +64,7 @@ app.use ('/users', userRouter );
 app.use ('./register', registerRouter );
 app.use ('./login', userRouter );
 app.use ('/product-add', productAddRouter );
-app.use ('/searchResults', searchResultsRouter );
+app.use ('/search', searchResultsRouter );
 app.use ('/profileEdit', userRouter );
 app.use ('/profile', profileRouter );
 app.use ('/usuarios', usuariosRouter);
