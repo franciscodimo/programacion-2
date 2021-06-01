@@ -37,8 +37,8 @@ app.use (session(
    saveUninitialized: true })),
 app.use(express.static(path.join(__dirname, 'public')));
 
-const publicRoutes = [
-  '/','/login', '/register', '/product', '/searchResults'
+const privateRoutes = [
+  '/product-add'
 ]
 
 app.use(function(req, res, next){
