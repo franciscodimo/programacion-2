@@ -38,7 +38,7 @@ app.use(function(req, res, next){
   if(req.session.user != undefined){
     res.locals.user = req.session.user
   } else {
-    if (!publicRoutes.includes(req.path)) {
+    if (!privateRoutes.includes(req.path)) {
       return res.redirect('/')
     }
   }
