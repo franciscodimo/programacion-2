@@ -7,7 +7,7 @@ let productAddController = {
     db.productos.create(req.body)
 
     .then(() => {
-        return res.redirect('/productos');
+        return res.redirect('index');
     })
 
     .catch((error) => {

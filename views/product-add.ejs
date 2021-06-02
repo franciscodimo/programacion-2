@@ -30,26 +30,39 @@
 				</div>
 			</section> -->
 			<section>
-    <div class="edit-product-form">
-        <header style="margin-bottom: 30px; margin-top: -50px; font-size: 15px; font-style: italic; margin-left: 250px;" class="main-header-editar">Edit product</header>
-        <div class="data">
-            <label for="item-name">Name:</label>
-            <input type="text" id="item-name" value="name" placeholder="Name..."/>
-            <label for="category">Category:</label>
-            <input type="text" id="category" value="category" placeholder="Category..."/>
-            <label for="price">Price:</label>
-            <input type="text" id="price" value="price" placeholder="0.00"/>
-        </div>
-        <div class="panel">
-            <button id="edit-product-button" class="button" data-id="{{objectId}}">Edit</button>
-            <a href="#/products">
-                <button class="button">Cancel</button>
-            </a>
-        </div>
-    </div>
-</div>
-</div>
-</section>
+				<form class= "formulario" action="/producto/product-add" method="POST">
+
+					<p>
+					<label for="imagen"> Url de la imagen: </label>
+					<input type="url" name="url_imagen" id="url_imagen">
+					</p>
+					<p>
+						<label for="nombre"> Nombre del Producto: </label>
+						<input type="text" name="nombre_producto" id="nombre_producto">
+						</p>
+					<p>
+					<p>
+						<label for="Categoria"> Categoria: </label>
+						<input type="text" name="Categoria" id="Categoria">
+					</p>
+					<p>
+						<label for="nombre"> Fecha de hoy (AAAA-MM-DD): </label>
+						<input type="text" name="fecha_publicacion" id="fecha_publicacion">
+					</p>
+					<!-- (ID) Parte hardcodeada hasta que tengamos foreign keys-->
+					<p>
+						<label for="nombre"> Tu ID personal: </label>
+						<input type="number" name="id_usuario" id="id_usuario" value= <%= locals.id %>  readonly>
+						</p>
+					<p>
+					<p>
+					<button type="submit" value="enviar">Agregar Producto</button>
+					</p>
+				
+				</form>
+      
+		
+			</section>
 
 
 	<!-- footer -->
