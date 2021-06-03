@@ -17,8 +17,25 @@ let productController = {
 		})
 		.catch((error) => {
 			return res.send(error);
+		})},
+	
+		form: function(req, res){
+			res.render('product-add');
+			},
+	 create: function(req, res){
+		db.productos.create(req.body)
+	
+		.then(() => {
+			return res.redirect('product');
 		})
-	}}
+	
+		.catch((error) => {
+			return res.send(error);
+		})},
+	}
+	
 
 
   module.exports = productController;
+
+  

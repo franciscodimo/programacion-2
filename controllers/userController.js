@@ -6,13 +6,16 @@ let usersController = {
         db.usuarios.findByPk(id)
         .then((data) => {
             
-            res.render('profile')
+            res.render('profile' ,{
+                product: data
+            } )
         })
         .catch((error) => {
             return res.send(error);
         })
     },
 }
+
 
 
 

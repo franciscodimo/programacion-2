@@ -11,19 +11,20 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= locals.user ? user.nombre : '' %> 
+					<h1 class="main-title"> <%= locals.user ? user.nombre +' '+ user.apellido: '' %> 
 						<a href="/profile-edit">
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					<a class="btn mt-3 ml-4" href="">Change profile</a>
 				</div>
-				<div>
+				<div> 
 					<ul>
 						
-						<h2 class="product-title"> <%- productos.length%> </h2>		
-						<li>200 seguidores</li>
-						<li>300 comentarios</li>
+						<li class="productos-perfil" style="color: black;">X productos agregados <%-product.length%> 	
+						</li>		
+						<li>X seguidores</li>
+						<li>X comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -35,7 +36,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
+				<h2 class="titulosss">My products</h2>
 			</div>
 			<% for( let i = 0; i < product.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
@@ -53,7 +54,8 @@
 				  </section>
 				</div>
 			  <% } %> 
-
+			  <div></div>
+			  <div class="col-12"><h2 class="titulosss">My comments</h2></div>
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) =>{
             type: DataTypes.STRING
         },
         precio:{
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
         created_at:{
             type: DataTypes.DATE

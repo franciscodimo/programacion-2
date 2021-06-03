@@ -50,8 +50,7 @@ let securityController = {
                                 }},
 
                             logout: function(req, res){
-                                req.session.destroy ();
-                                res.clearCookie('userId')
+                                req.session.destroy();
                                 return res.redirect('/');
                             }
 }

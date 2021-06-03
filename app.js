@@ -16,7 +16,7 @@ var usuariosRouter = require('./routes/usuarios');
 var categoriasRouter = require('./routes/categorias');
 var comentariosRouter = require('./routes/comentarios');
 var securityRouter = require('./routes/security');
-//Q odna////////////
+
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +37,7 @@ const privateRoutes = [
 app.use(function(req, res, next){
   if(req.session.user != undefined){
     res.locals.user = req.session.user
-  } else {
+    } else {
     if (privateRoutes.includes(req.path)) {
       return res.redirect('/')
     }

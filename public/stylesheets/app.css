@@ -560,7 +560,7 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: black;
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
@@ -602,6 +602,11 @@ textarea.form-input {
   color: gray;
 } 
 
+.titulosss{
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
 /*======= Registrate =======*/
 .registrate-title{
   color: white;

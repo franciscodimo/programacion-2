@@ -1,14 +1,15 @@
 let db = require("../database/models");
 let profileController = {
     profile: function(req, res) {
-      let productos = db.productos.findAll ({
+      let productos = db.productos.findByPk({
         where: { 
           usuario_id: req.session.user.id,
-        }
+        }    
+          
       })
         res.render('profile' ,{
             productos:productos,
-            
+            product: data
         } )
         
     },
@@ -21,3 +22,4 @@ let profileController = {
 }
 
 module.exports = profileController;
+
