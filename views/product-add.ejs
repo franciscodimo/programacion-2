@@ -29,40 +29,53 @@
 					</div>
 				</div>
 			</section> -->
-			<section>
-				<form class= "formulario" action="/producto/product-add" method="POST">
+			<div class="add-form">
+				<form class= "formulario" action="/" method="POST">
 
 					<p>
-					<label for="imagen"> Url de la imagen: </label>
-					<input type="url" name="url_imagen" id="url_imagen">
+					<label class="formss3" for="imagen"> </label>
+					<input class="formss" type="text" name="nombre" id="nombre" placeholder="Product name...">
 					</p>
 					<p>
-						<label for="nombre"> Nombre del Producto: </label>
-						<input type="text" name="nombre_producto" id="nombre_producto">
+						<label class="formss3" for="nombre"> </label>
+						<input class="formss" type="" name="url_imagen" id="url_imagen" placeholder="Picture... ">
 						</p>
 					<p>
-					<p>
-						<label for="Categoria"> Categoria: </label>
-						<input type="text" name="Categoria" id="Categoria">
+						<p>
+							<label class="formss3" for="nombre"> </label>
+							<textarea class="formss" type="text" name="precio" id="precio" placeholder="Product comment..."></textarea>
+						</p>
+					<select class="formss"	 name = "categoria_id" id="categoria_id">
+						<option value = "Gala" selected>Category</option>
+						<option value = "1">Sports</option>
+						<option value = "2">Formal</option>
+						<option value = "3">Work</option>
+						<option value = "4">Travel</option>
+					 </select>
+
+					 <p>
+						<label class="formss3" for="nombre"> </label>
+						<input  class="formss" type="text" name="precio" id="precio" placeholder="Price...">
 					</p>
+					
 					<p>
-						<label for="nombre"> Fecha de hoy (AAAA-MM-DD): </label>
-						<input type="text" name="fecha_publicacion" id="fecha_publicacion">
+						<label class="formss3" for="nombre">  </label>
+						<input class="formss" type="text" name="fecha_publicacion" id="fecha_publicacion" placeholder="Production date...">
 					</p>
 					<!-- (ID) Parte hardcodeada hasta que tengamos foreign keys-->
+					
 					<p>
-						<label for="nombre"> Tu ID personal: </label>
-						<input type="number" name="id_usuario" id="id_usuario" value= <%= locals.id %>  readonly>
-						</p>
+						
+						
 					<p>
-					<p>
-					<button type="submit" value="enviar">Agregar Producto</button>
+					<button class=
+					"formss" type="submit" value="enviar">CREATE PRODUCT</button>
 					</p>
 				
 				</form>
       
 		
-			</section>
+			</div>
 
 
 	<!-- footer -->

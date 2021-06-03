@@ -2,10 +2,11 @@ let db = require("../database/models");
 
 let usersController = {
     index: function (req, res) {
+        let id = req.params.id;
         db.usuarios.findByPk(id)
         .then((data) => {
             
-            return res.send (data)
+            res.render('profile')
         })
         .catch((error) => {
             return res.send(error);

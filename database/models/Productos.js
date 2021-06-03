@@ -20,10 +20,13 @@ module.exports = (sequelize, DataTypes) =>{
         url_imagen:{
             type: DataTypes.STRING
         },
+        descripcion:{
+            type: DataTypes.STRING
+        },
         precio:{
             type: DataTypes.STRING
         },
-        fecha_de_publicacion:{
+        created_at:{
             type: DataTypes.DATE
         },
     }

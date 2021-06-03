@@ -52,7 +52,7 @@ let securityController = {
                             logout: function(req, res){
                                 req.session.destroy ();
                                 res.clearCookie('userId')
-                                return res.redirect('/logout');
+                                return res.redirect('/');
                             }
 }
 module.exports = securityController;

@@ -71,6 +71,7 @@ app.use ('/usuarios', usuariosRouter);
 app.use ('/categorias', categoriasRouter);
 app.use ('/comentarios', comentariosRouter);
 app.use ('/', securityRouter);
+
 // ya se que esto va en las rutas pero no tenia tiempo de arreglarlo
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
