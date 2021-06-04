@@ -40,6 +40,15 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false,
     }
     const Productos = sequelize.define(alias, cols, configs);
+
+    Productos.association = function(model){
+        Productos.belongsTo(models.usuarios,{
+            as:'productos.usuario',
+            foreignKey: 'usuario_id'
+        })
+
+    
+    }
     return Productos;
     }
     

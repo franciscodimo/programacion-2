@@ -5,9 +5,10 @@ let productAddController = {
 },
  create: function(req, res){
     db.productos.create(req.body)
+    
 
     .then(() => {
-        return res.redirect('product');
+        return res.redirect('/');
     })
 
     .catch((error) => {

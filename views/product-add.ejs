@@ -33,35 +33,30 @@
 				<form class= "formulario" action="/product" method="POST">
 
 					<p>
-					<label class="formss3" for="imagen"> </label>
+					<label class="formss3" > </label>
 					<input class="formss" type="text" name="nombre" id="nombre" placeholder="Product name...">
 					</p>
 					<p>
-						<label class="formss3" for="nombre"> </label>
-						<input class="formss" type="" name="url_imagen" id="url_imagen" placeholder="Picture... ">
+						<label class="formss3" > </label>
+						<input class="formss" type="text" name="url_imagen" id="url_imagen" placeholder="Picture... ">
 						</p>
 					<p>
 						<p>
-							<label class="formss3" for="nombre"> </label>
-							<textarea class="formss" type="text" name="precio" id="precio" placeholder="Product comment..."></textarea>
+							<label class="formss3" > </label>
+							<textarea class="formss" type="text" name="descripcion" id="descripcion" placeholder="Product comment..."></textarea>
 						</p>
-					<select class="formss"	 name = "categoria_id" id="categoria_id">
-						<option value = "Gala" selected>Category</option>
-						<option value = "1">Sports</option>
-						<option value = "2">Formal</option>
-						<option value = "3">Work</option>
-						<option value = "4">Travel</option>
-					 </select>
+					<select name="categoria_id" id="categoria_id">
+						<% for( let i = 0; i < categoria.length; i++ ) { %>
+							<option value="categorias[i].nombre"></option>
+							<% } %>
+					</select>
 
 					 <p>
-						<label class="formss3" for="nombre"> </label>
-						<input  class="formss" type="text" name="precio" id="precio" placeholder="Price...">
+						<label class="formss3" > </label>
+						<input  class="formss" type="number" name="precio" id="precio" placeholder="Price...">
 					</p>
 					
-					<p>
-						<label class="formss3" for="nombre">  </label>
-						<input class="formss" type="text" name="fecha_publicacion" id="fecha_publicacion" placeholder="Production date...">
-					</p>
+					
 					<!-- (ID) Parte hardcodeada hasta que tengamos foreign keys-->
 					
 					<p>

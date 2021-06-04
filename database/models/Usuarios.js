@@ -36,6 +36,17 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false,
     }
     const Usuarios = sequelize.define(alias, cols, configs);
+
+    Usuarios.association = function(model){
+        Usuarios.hasMany(models.productos, {
+            as:'productos.usuario',
+            foreignKey: 'usuario_id'
+        })
+        Usuarios.hasMany(models.comentarios, {
+            as:'comentarios.usuario',
+            foreignKey: 'usuario_id'
+        })}
+        
     return Usuarios;
     }
     
@@ -44,4 +55,3 @@ module.exports = (sequelize, DataTypes) =>{
     
 //esta estructura tenemos que hacerlo con todas la tablas 
     
-

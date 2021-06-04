@@ -32,7 +32,7 @@ app.use (session(
 app.use(express.static(path.join(__dirname, 'public')));
 
 const privateRoutes = [
-  '/product-add', '/profile'
+    '/product-add', '/profile'
 ]
 app.use(function(req, res, next){
   if(req.session.user != undefined){

@@ -6,7 +6,7 @@ let productController = {
 		.then((producto) => {
 			db.comentarios.findAll({
 				where: {producto_id: producto.id},
-				include: [{association: "usuario"}]
+				include: [{association: "producto"}]
 			})
 			.then((comentarios) => {
 				return res.render('product', { 
@@ -18,20 +18,28 @@ let productController = {
 		.catch((error) => {
 			return res.send(error);
 		})},
+	categoria:  function(req, res){
+		let categoria =  req.params.id
+		db.categoria.findByPk(id)
+
+			.then((categorias) => {
+				categoria: product
+			})
+	}
 	
-		form: function(req, res){
-			res.render('product-add');
-			},
-	 create: function(req, res){
-		db.productos.create(req.body)
+		// form: function(req, res){
+		// 	res.render('product-add');
+		// 	},
+	 	// create: function(req, res){
+		// db.productos.create(req.body)
+			
+		// .then(() => {
+		// 	return res.redirect('/');
+		// })
 	
-		.then(() => {
-			return res.redirect('product');
-		})
-	
-		.catch((error) => {
-			return res.send(error);
-		})},
+		// .catch((error) => {
+		// 	return res.send(error);
+		// })},
 	}
 	
 

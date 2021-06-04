@@ -2,7 +2,10 @@ let db = require("../database/models");
 let indexController = { 
 	index: function (req, res) {
 		db.productos.findAll({
-		limit: 12	
+			order: [
+                [ 'created_at', 'ASC' ]
+            ],
+		limit: 100	
 		})
 		
 

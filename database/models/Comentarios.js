@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) =>{
         texto_comentario:{
             type: DataTypes.STRING
         },
-        fecha_creacion:{
+        created_at:{
             type: DataTypes.DATE
         },
     }
@@ -30,6 +30,18 @@ module.exports = (sequelize, DataTypes) =>{
         timestamps: false,
     }
     const Comentarios = sequelize.define(alias, cols, configs);
+
+    Comentarios.associate = function(models){
+        Comentarios.belongsTo(models.productos, {
+            as: 'producto',
+            foreignKey: 'producto_id'
+        })
+        Comentarios.belongsTo(models.usuarios, {
+            as:'usuario',
+            foreignKey:'usuario_id'
+        })
+    }
+
     return Comentarios;
     }
     
