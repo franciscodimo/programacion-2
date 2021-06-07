@@ -30,7 +30,7 @@
 				</div>
 			</section> -->
 			<div class="add-form">
-				<form class= "formulario" action="/product" method="POST">
+				<form class= "formulario" action="/product" method="POST" enctype="multipart/form-data">
 
 					<p>
 					<label class="formss3" > </label>
@@ -45,11 +45,23 @@
 							<label class="formss3" > </label>
 							<textarea class="formss" type="text" name="descripcion" id="descripcion" placeholder="Product comment..."></textarea>
 						</p>
-					<select name="categoria_id" id="categoria_id">
-						<% for( let i = 0; i < categoria.length; i++ ) { %>
-							<option value="categorias[i].nombre"></option>
-							<% } %>
+					<select class="formss" name="categoria_id" id="categoria_id">
+							<option value="">1</option>
+							<option value="">2</option>
+							<option value="">3</option>
+							<option value="">4</option>
+							<option value="">5</option>
+							<option value="">6</option>
+							<option value="">7</option>
+							<option value="">8</option>
+							<option value="">9</option>
+							<option value="">10</option>
+							<option value="">11</option>
+							<option value="">12</option>
+							<option value="">13</option>
 					</select>
+					<label class="formss3" > Choose file</label>
+					<input class="formss" type="fyle" name="image" id="image" placeholder="Picture... ">
 
 					 <p>
 						<label class="formss3" > </label>

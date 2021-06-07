@@ -11,15 +11,15 @@
 	
 	<div class="product-detail">
 		<div class="d-flex align-items-center">
-			<h2 class="product-title"><%- product.nombre %> </h2> 
+			<h2 class="product-title" ><%- product.nombre %> </h2> 
 
 		</div>
-		<p class="product-detail-description"></p>
+		<p class="editar">
 				<a style="padding-left: 30px; color: white; margin-top: -15px;" href="/product-add">Editar</a>
 			</p>
 		<div class="row">
 			<article class="col-12 col-lg-8 product-detail-info">
-				<img src="<%- product.imagen  %> " alt="" class="product-detail-img">
+				<img src="<%- product.url_imagen  %> " alt="" class="product-detail-img">
 				<p class="product-detail-description">
 					<%- product.descripcion  %> </p>
 			</article>
@@ -77,8 +77,8 @@
 						</article>
 					</section>
 					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						<input class="form-input" type="text" name="texto_comentario" id="texto_comentario" placeholder="New comment...">
+						<button type="submit" class="buy-now-button">ADD COMMENT</button>
 					</form>
 					<hr>
 				</div>

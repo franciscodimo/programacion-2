@@ -1,4 +1,5 @@
 let db = require("../database/models");
+
 let productController = { 
 	product: function (req, res) {
 		var id =  req.params.id
@@ -18,32 +19,35 @@ let productController = {
 		.catch((error) => {
 			return res.send(error);
 		})},
-	categoria:  function(req, res){
-		let categoria =  req.params.id
-		db.categoria.findByPk(id)
+	// categoria:  function(req, res){
+	// 	let categoria =  req.params.id
+	// 	db.categoria.findByPk(id)
 
-			.then((categorias) => {
-				categoria: product
-			})
+	// 		.then((categorias) => {
+	// 			categoria: product
+	// 		})
+	// }
+
+	form: function(req, res){
+        res.render('product');
+	},
+ 	create: function(req, res){
+    	db.comentarios.create(req.body)
+
+		.then(() => {
+			return res.redirect('/');
+		})
+	
+		.catch((error) => {
+			return res.send(error);
+		})
+
+    	.catch((error) => {
+        	return res.send(error);
+    	})
 	}
-	
-		// form: function(req, res){
-		// 	res.render('product-add');
-		// 	},
-	 	// create: function(req, res){
-		// db.productos.create(req.body)
-			
-		// .then(() => {
-		// 	return res.redirect('/');
-		// })
-	
-		// .catch((error) => {
-		// 	return res.send(error);
-		// })},
-	}
-	
 
-
+}
   module.exports = productController;
 
   

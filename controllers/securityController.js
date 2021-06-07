@@ -1,7 +1,7 @@
 let db = require('../database/models');
 const bcrypt = require('bcryptjs')
 
-let securityController = {
+let securityController = { 
                             login: function (req, res) {
                                 return res.render ('security/login', {
                                     failed: req.query.failed
@@ -37,6 +37,13 @@ let securityController = {
                                 if (req.method == 'POST') {
                                     req.body.password = bcrypt.hashSync(req.body.password);
                                     db.usuarios.create(req.body)
+                                    /*let errors = {
+                                        if(req.body.email == ""){
+                                            errors.message = "email cannnot be empty";
+                                            res.locals.errors = errors;                                   
+                                            return res.render('register')
+                                        ((Preguntar a Pehuen, validacion de formularios))
+                                }}*/ 
                                     .then(() => {
                                         return res.redirect('/')
                                     })
@@ -52,6 +59,7 @@ let securityController = {
                             logout: function(req, res){
                                 req.session.destroy();
                                 return res.redirect('/');
-                            }
+                            },
+                            
 }
 module.exports = securityController;
