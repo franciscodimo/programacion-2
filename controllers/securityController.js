@@ -37,6 +37,14 @@ let securityController = {
                                 if (req.method == 'POST') {
                                     req.body.password = bcrypt.hashSync(req.body.password);
                                     db.usuarios.create(req.body)
+
+
+
+
+
+
+
+                                    
                                     /*let errors = {
                                         if(req.body.email == ""){
                                             errors.message = "email cannnot be empty";
