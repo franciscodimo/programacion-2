@@ -31,7 +31,7 @@ app.use (session(
 app.use(express.static(path.join(__dirname, 'public')));
 
 const privateRoutes = [
-    '/product-add', '/profile'
+  '/profile'
 ]
 app.use(function(req, res, next){
   if(req.cookies.userId != undefined && req.session.user == undefined){

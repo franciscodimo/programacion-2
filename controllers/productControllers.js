@@ -29,10 +29,23 @@ let productController = {
 	// }
 
 	form: function(req, res){
-        res.render('product-add');
+		db.categorias.findAll()
+		.then(categorias =>{
+			res.render('product-add', {
+				categorias:categorias
+			});
+		})
 },
  create: function(req, res){
-    db.productos.create(req.body)
+	 let nuevoProducto = {
+		 categoria_id: req.body.categoria_id,
+		 usuario_id: req.session.user.id,
+		 nombre: req.body.nombre,
+		 url_imagen: req.file.filename,
+		 descripcion: req.body.descripcion,
+		 precio: req.body.price,
+	 } 
+    db.productos.create(nuevoProducto)
     
 
     .then(() => {
