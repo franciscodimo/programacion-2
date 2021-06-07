@@ -5,7 +5,7 @@ let indexController = {
 			order: [
                 [ 'created_at', 'ASC' ]
             ],
-		limit: 100	
+		limit: 12	
 		})
 		
 
