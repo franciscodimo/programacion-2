@@ -29,23 +29,19 @@ let productController = {
 	// }
 
 	form: function(req, res){
-        res.render('product');
-	},
- 	create: function(req, res){
-    	db.comentarios.create(req.body)
+        res.render('product-add');
+},
+ create: function(req, res){
+    db.productos.create(req.body)
+    
 
-		.then(() => {
-			return res.redirect('/');
-		})
-	
-		.catch((error) => {
-			return res.send(error);
-		})
+    .then(() => {
+        return res.redirect('/');
+    })
 
-    	.catch((error) => {
-        	return res.send(error);
-    	})
-	}
+    .catch((error) => {
+        return res.send(error);
+    })},
 
 }
   module.exports = productController;

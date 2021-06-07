@@ -9,7 +9,6 @@ var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users');
 var registerRouter = require ('./routes/register');
-var productAddRouter = require ('./routes/productAdd');
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
@@ -35,16 +34,6 @@ const privateRoutes = [
     '/product-add', '/profile'
 ]
 app.use(function(req, res, next){
-  if(req.session.user != undefined){
-    res.locals.user = req.session.user
-    } else {
-    if (privateRoutes.includes(req.path)) {
-      return res.redirect('/')
-    }
-  }
-  next();
-});
-app.use(function(req, res, next){
   if(req.cookies.userId != undefined && req.session.user == undefined){
     //Cambiar
     db.usuarios.findByPk(req.cookies.userId)
@@ -57,13 +46,22 @@ app.use(function(req, res, next){
     next()
   }
 })
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    } else {
+    if (privateRoutes.includes(req.path)) {
+      return res.redirect('/')
+    }
+  }
+  next();
+});
 app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use('/productEdit', productRouter);
 app.use ('/users', userRouter );
 app.use ('./register', registerRouter );
 app.use ('./login', userRouter );
-app.use ('/product-add', productAddRouter );
 app.use ('/search', searchResultsRouter );
 app.use ('/profileEdit', userRouter );
 app.use ('/profile', profileRouter );
