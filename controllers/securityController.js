@@ -43,7 +43,6 @@ let securityController = {
 
 
 
-
                                     
                                     /*let errors = {
                                         if(req.body.email == ""){

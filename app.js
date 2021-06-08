@@ -8,6 +8,7 @@ let db = require('./database/models');
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users');
+
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
