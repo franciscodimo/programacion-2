@@ -8,6 +8,7 @@ let productController = {
 			db.comentarios.findAll({
 				where: {producto_id: producto.id},
 				include: [{association: "producto"}]
+				
 			})
 			.then((comentarios) => {
 				return res.render('product', { 

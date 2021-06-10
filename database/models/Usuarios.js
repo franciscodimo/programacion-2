@@ -24,7 +24,10 @@ module.exports = (sequelize, DataTypes) =>{
         },
         password:{
             type: DataTypes.STRING
-        }
+        },
+        imagen:{
+            type: DataTypes.VARCHANT
+        },
     }
 
     // let config = {   
