@@ -14,7 +14,7 @@
 			<div class="register-form">
 					
 				<div class="data">
-					<form method= 'POST'>
+					<form method= 'POST' enctype="multipart/form-data">
 							
 						<input class="formss" type="text" id="nombre" name="nombre" placeholder="Name"/>
 						<input class="formss" type="text" id="apellido" name="apellido" placeholder="Last name"/>	
@@ -25,9 +25,9 @@
 						
 						<p class="nacimiento"> Birth date</p>
 						<input  class="formss" type="date" id="fecha_de_nacimiento" placeholder="Birth date"/>
+						<label class="formss3" > <input class="formss" type="file" name="url_imagen" id="url_imagen" placeholder="Picture... "></label>
+						
 					    <p class="obligatorio"> (**) mandatory field</p>
-						<label class="formss3" > Choose file</label>
-					<input class="formss" type="file" name="url_imagen" id="url_imagen" placeholder="Picture... ">
 						<input class="formss" type="submit" value="Check in">
 					</form>
 					

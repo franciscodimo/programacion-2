@@ -3,7 +3,7 @@ let indexController = {
 	index: function (req, res) {
 		db.productos.findAll({
 			order: [
-                [ 'created_at', 'ASC' ]
+                [ 'created_at', 'DESC' ]
             ],
 		limit: 12	
 		})

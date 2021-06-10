@@ -34,9 +34,16 @@ let securityController = {
                                 })
                             },
                             register: function (req, res) {
+                                let nuevoUsuario = {
+                                    nombre: req.body.nombre,
+                                    apellido: req.body.apellido,
+                                    fecha_de_nacimiento: req.body.fecha_de_nacimiento,
+                                    url_imagen: req.file.filename 
+                                    }
+                                     
                                 if (req.method == 'POST') {
                                     req.body.password = bcrypt.hashSync(req.body.password);
-                                    db.usuarios.create(req.body)
+                                    db.usuarios.create(nuevoUsuario)
 
 
 

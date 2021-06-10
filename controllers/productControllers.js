@@ -35,8 +35,9 @@ let productController = {
 				categorias:categorias
 			});
 		})
-},
- create: function(req, res){
+	},
+ 	create: function(req, res){
+		 
 	 let nuevoProducto = {
 		 categoria_id: req.body.categoria_id,
 		 usuario_id: req.session.user.id,
