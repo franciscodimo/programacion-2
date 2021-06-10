@@ -62,7 +62,7 @@ app.use('/productEdit', productRouter);
 app.use ('/users', userRouter );
 app.use ('./login', userRouter );
 app.use ('/search', searchResultsRouter );
-app.use ('/profileEdit', userRouter );
+app.use ('/profile-edit', userRouter );
 app.use ('/profile', profileRouter );
 app.use ('/usuarios', usuariosRouter);
 app.use ('/categorias', categoriasRouter);

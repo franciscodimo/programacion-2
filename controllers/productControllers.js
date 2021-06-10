@@ -1,25 +1,26 @@
 let db = require("../database/models");
 
-let productController = { 
+let productController = {
 	product: function (req, res) {
-		var id =  req.params.id
+		var id = req.params.id
 		db.productos.findByPk(id)
-		.then((producto) => {
-			db.comentarios.findAll({
-				where: {producto_id: producto.id},
-				include: [{association: "producto"}]
-				
+			.then((producto) => {
+				db.comentarios.findAll({
+					where: { producto_id: producto.id },
+					include: [{ association: "producto" }]
+
+				})
+					.then((comentarios) => {
+						return res.render('product', {
+							product: producto,
+							comentarios: comentarios
+						});
+					})
 			})
-			.then((comentarios) => {
-				return res.render('product', { 
-					product: producto,
-					comentarios: comentarios
-				});
+			.catch((error) => {
+				return res.send(error);
 			})
-		})
-		.catch((error) => {
-			return res.send(error);
-		})},
+	},
 	// categoria:  function(req, res){
 	// 	let categoria =  req.params.id
 	// 	db.categoria.findByPk(id)
@@ -29,36 +30,55 @@ let productController = {
 	// 		})
 	// }
 
-	form: function(req, res){
+	form: function (req, res) {
 		db.categorias.findAll()
-		.then(categorias =>{
-			res.render('product-add', {
-				categorias:categorias
-			});
-		})
+			.then(categorias => {
+				res.render('product-add', {
+					categorias: categorias
+				});
+			})
 	},
- 	create: function(req, res){
-		 
-	 let nuevoProducto = {
-		 categoria_id: req.body.categoria_id,
-		 usuario_id: req.session.user.id,
-		 nombre: req.body.nombre,
-		 url_imagen: req.file.filename,
-		 descripcion: req.body.descripcion,
-		 precio: req.body.price,
-	 } 
-    db.productos.create(nuevoProducto)
-    
+	comentarios: function (req, res) {
 
-    .then(() => {
-        return res.redirect('/');
-    })
 
-    .catch((error) => {
-        return res.send(error);
-    })},
+		let nuevoComentario = {
+			texto_comentario: req.body.texto_comentario,
+			created_at: req.body.created_at,
+		}
+		db.comentarios.create(nuevoComentario)
+
+
+			.then(() => {
+				return res.redirect('/');
+			})
+
+			.catch((error) => {
+				return res.send(error);
+			})
+	},
+	create: function(req, res){
+
+		let nuevoProducto = {
+			categoria_id: req.body.categoria_id,
+			usuario_id: req.session.user.id,
+			nombre: req.body.nombre,
+			url_imagen: req.file.filename,
+			descripcion: req.body.descripcion,
+			precio: req.body.price,
+		}
+		db.productos.create(nuevoProducto)
+
+
+	.then(() => {
+		return res.redirect('/');
+	})
+
+	.catch((error) => {
+		return res.send(error);
+	})
+	},
+
 
 }
-  module.exports = productController;
+module.exports = productController;
 
-  
