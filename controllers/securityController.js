@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 let securityController = {
     login: function (req, res) {
         return res.render('security/login', {
-            failed: req.query.failed
+            failed: req.query.failed,
         });
     },
     authenticate: function (req, res) {

@@ -6,7 +6,7 @@ const sequrityController = require ('../controllers/securityController');
 // const { route } = require('./productAdd');
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './public/images');
+        cb(null, './public/images/users');
     },
     filename: (req, file, cb)=>{
         cb(null, Date.now() + '-' + file.fieldname + path.extname(file.originalname))
@@ -17,7 +17,7 @@ const upload = multer({storage: storage})
 router.get('/login', sequrityController.login);
 router.post('/login', sequrityController.authenticate);
 router.get('/register', sequrityController.register);
-router.post('/register', upload.single('url_imagen'), sequrityController.register);
+router.post('/register', upload.single('imagen'), sequrityController.register);
 router.all('/logout', sequrityController.logout);
 
 module.exports = router;

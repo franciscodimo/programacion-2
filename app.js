@@ -8,7 +8,6 @@ let db = require('./database/models');
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var userRouter = require ('./routes/users');
-
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
 var usuariosRouter = require('./routes/usuarios');
@@ -29,6 +28,7 @@ app.use (session(
    resave: false,
    saveUninitialized: true })),
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 const privateRoutes = [
   '/profile'
@@ -62,7 +62,7 @@ app.use('/productEdit', productRouter);
 app.use ('/users', userRouter );
 app.use ('./login', userRouter );
 app.use ('/search', searchResultsRouter );
-app.use ('/profileEdit', userRouter );
+app.use ('/profile-edit', profileRouter );
 app.use ('/profile', profileRouter );
 app.use ('/usuarios', usuariosRouter);
 app.use ('/categorias', categoriasRouter);
