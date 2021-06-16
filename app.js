@@ -29,7 +29,6 @@ app.use (session(
    saveUninitialized: true })),
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 const privateRoutes = [
   '/profile'
 ]
