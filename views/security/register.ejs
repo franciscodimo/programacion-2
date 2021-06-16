@@ -16,15 +16,15 @@
 				    <div class="data">
 					<form method='POST' enctype="multipart/form-data">
 							
-						<input class="formss" type="text" id="nombre" name="nombre" placeholder="Name"/>
-						<input class="formss" type="text" id="apellido" name="apellido" placeholder="Last name"/>	
-						<input class="formss" type="text" id="email" name="email" placeholder="Email (**)"/>
+						<input class="formss" type="text" id="nombre" name="nombre" placeholder="Name" required/>
+						<input class="formss" type="text" id="apellido" name="apellido" placeholder="Last name" required/>	
+						<input class="formss" type="text" id="email" name="email" placeholder="Email (**)" required/>
 							
-						<input class="formss" type="password" id="password" name="password" placeholder="Password (**)"/>
-						<input class="formss" type="text" id="telefono" name="telefono"placeholder="Phone number"/>
+						<input class="formss" type="password" id="password" name="password" placeholder="Password (**)" required/>
+						<input class="formss" type="text" id="telefono" name="telefono"placeholder="Phone number" required/>
 						
 						<p class="nacimiento"> Birth date</p>
-						<input  class="formss" type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" placeholder="Birth date"/>
+						<input  class="formss" type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" placeholder="Birth date" required />
 					    <p class="obligatorio"> (**) mandatory field</p>
 						<label class="formss3" > Choose file</label>
 					    <input class="formss" type="file" name="imagen" id="imagen" placeholder="Picture... ">
