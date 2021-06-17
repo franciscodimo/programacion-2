@@ -8,6 +8,25 @@
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
+				<div class="register-form">
+					
+				    <div class="data">
+					<form method='POST' enctype="multipart/form-data">
+						<input class="formss" type="text" id="nombre" name="nombre" value=<% usuarios.nombre %> />
+						<input class="formss" type="text" id="apellido" name="apellido" value=<% usuarios.apellido %>/>	
+						<input class="formss" type="text" id="email" name="email" value=<% usuaruios.email%>/>	
+						<input class="formss" type="password" id="password" name="password" value=<% usuarios.password%>/>
+						<input class="formss" type="text" id="telefono" name="telefono" value=<% usuarios.telefono%>/>
+						<p class="nacimiento"> Birth date</p>
+						<input  class="formss" type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" value=<% usuarios.fecha_de_nacimiento%>/>
+						<label class="formss3" > Choose file</label>
+					    <input class="formss" type="file" name="imagen" id="imagen" value=<% usuarios.imagen %>>
+						<input class="formss" type="submit" value="Update">
+					</form>
+					
+				</div>
+				
+			</div>
 			</div>
 			<!-- Show the "ultimos" products -->
 			

@@ -14,21 +14,15 @@ let usersController = {
             return res.send(error);
         })
     },
+    edit: async (req, res) => {
+        let usuario = await db.usuarios.findByPk(req.params.id);
+
+        return res.render('profile-edit', { 
+            usuario: data
+        });
+    },
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //   register: function(req,res){
+//   register: function(req,res){
 //     res.render('register' ,{
 //         products:products,
 //         logueado:true
