@@ -7,10 +7,11 @@ let productController = {
 			.then((producto) => {
 				db.comentarios.findAll({
 					where: { producto_id: producto.id },
-					include: [{ association: "producto" }]
+					include: [{ association: "usuario" }]
 
 				})
 					.then((comentarios) => {
+						console.log(comentarios)
 						return res.render('product', {
 							product: producto,
 							comentarios: comentarios
@@ -40,8 +41,10 @@ let productController = {
 	},
 	comentarios: function (req, res) {
 
-
+       
 		let nuevoComentario = {
+			producto_id: req.params.id,
+			usuario_id: req.session.user.id,
 			texto_comentario: req.body.texto_comentario,
 			created_at: req.body.created_at,
 		}
@@ -49,13 +52,61 @@ let productController = {
 
 
 			.then(() => {
-				return res.redirect('/');
+				return res.redirect(req.get('Referrer'));
 			})
 
 			.catch((error) => {
 				return res.send(error);
 			})
 	},
+	add(req, res){
+      if(req.method === 'POST'){
+        req.body.user_id = req.session.user.id;
+		if (req.body.url) req.body.image = req.body.url;
+		if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
+		db.Product.create(req.body)
+		.then(() => {
+			return res.redirect('/');
+		})
+
+		.catch((error) => {
+			return res.send(error);
+		})
+	  }
+	  if (req.method === 'GET') {
+		  const categoria = db.categorias.findAll();
+		  res.render('product/add', {categoria});
+		  
+	  }
+	},
+	profile: function (req, res, next) {
+    db.productos.findAll({
+		where:{user_id: req.session.user.id},
+	})
+	.then(products => {
+		db.comentarios.findAll({
+			whew:{comentarios_id: req.session.user.id},
+		})
+		//tengo que hacer un find all de los comentarios que me pertenecen. Lo hago haciendo db.comentarios 
+	})
+	},
+	
+
+	//  async edit (req, res, next){
+    //    const product = await db.Product.findByPk(req.params.id);
+	//    if (req.method === 'POST'){
+	// 	   product.update(req.body)
+	// 	   .then((data) => {
+            
+    //         res.render('profile' ,{
+    //             product: data
+    //         } )
+    //     })
+    //     .catch((error) => {
+    //         return res.send(error);
+    //     })
+	//    }
+	// },
 	create: function(req, res){
 
 		let nuevoProducto = {
