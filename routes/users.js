@@ -6,4 +6,5 @@ router.get('/:id',userController.index);
 
 
 
+
 module.exports = router;

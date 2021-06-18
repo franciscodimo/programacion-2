@@ -13,12 +13,18 @@ let profileController = {
         } )
         
     },
-  profileEdit: function(req, res){
-    res.render('profile-edit' ,{
-        
-        
-    } )
-  }
+    edit: (req, res) => {
+      let usuarios =  db.usuarios.findByPk(req.params.id)
+      .then((data) => {
+          res.render('profile-edit' ,{
+              usuario: data,
+          } )
+      })
+      .catch((error) => {
+          return res.send(error);
+      })
+      
+  },
 }
 
 module.exports = profileController;
