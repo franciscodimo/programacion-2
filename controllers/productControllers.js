@@ -3,8 +3,11 @@ let db = require("../database/models");
 let productController = {
 	product: function (req, res) {
 		var id = req.params.id
-		db.productos.findByPk(id)
+		db.productos.findByPk(id,{
+			include: [{ association: "usuario" }]
+		})
 			.then((producto) => {
+				console.log(producto)
 				db.comentarios.findAll({
 					where: { producto_id: producto.id },
 					include: [{ association: "usuario" }]
@@ -19,7 +22,9 @@ let productController = {
 					})
 			})
 			.catch((error) => {
+				console.log(error)
 				return res.send(error);
+				
 			})
 	},
 	// categoria:  function(req, res){

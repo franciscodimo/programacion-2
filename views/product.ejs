@@ -3,23 +3,23 @@
 <%- include('./partials/header') %> 
 <body>
 	<!-- Header -->
-	
-	
 	<!-- product detail -->
 <!-- product detail -->
-<div class="container products-wrapper">
-	
+
+		
 	<div class="product-detail">
 		<div class="d-flex align-items-center">
 			<h2 class="product-title" ><%- product.nombre %> </h2> 
-
+        </div>
+		<div>
+			<a href="/profile/ <%- product.usuario.id %> "> <h3  ><%- product.usuario.nombre %> </h3> </a> 
 		</div>
 		<p class="editar">
 				<a style="padding-left: 30px; color: white; margin-top: -15px;" href="/product-add">Editar</a>
 			</p>
 		<div class="row">
 			<article class="col-12 col-lg-8 product-detail-info">
-				<img src="/images/<%- product.url_imagen  %> " alt="" class="product-detail-img">
+				<img src="<%- product.url_imagen  %> " alt="" class="product-detail-img">
 				<p class="product-detail-description">
 					<%- product.descripcion  %> </p>
 			</article>
@@ -30,7 +30,7 @@
 						<img src="<%= comentarios[i].usuario.imagen %>" alt="">
 						<div class="data">
 							<p class="user">
-							<strong> <a href="/profile"> <%- comentarios[i].usuario.nombre%> </a> </strong>
+							<strong> <a href="/profile/<%= comentarios[i].usuario.id %> "> <%- comentarios[i].usuario.nombre%> </a> </strong>
 							<%-comentarios[i].texto_comentario %> </p>
 						</div>
 					</article>
