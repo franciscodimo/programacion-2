@@ -20,4 +20,5 @@ router.get('/register', sequrityController.register);
 router.post('/register', upload.single('imagen'), sequrityController.register);
 router.all('/logout', sequrityController.logout);
 
+
 module.exports = router;

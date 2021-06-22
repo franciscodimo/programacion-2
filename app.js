@@ -13,7 +13,24 @@ var categoriasRouter = require('./routes/categorias');
 var comentariosRouter = require('./routes/comentarios');
 var securityRouter = require('./routes/security');
 
+const { flash } = require('express-flash-message');
+
 var app = express();
+
+//Flash
+app.use(
+  session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+  }),
+);
+
+app.use(flash());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -53,6 +70,18 @@ app.use(function(req, res, next){
   }
   next();
 });
+
+//Flash
+app.use(async (req, res, next) => {
+  res.locals.flash = {
+    success: await req.consumeFlash('success'),
+    info: await req.consumeFlash('info'),
+    danger: await req.consumeFlash('danger'),
+    warning: await req.consumeFlash('warning'),
+  };
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use('/productEdit', productRouter);

@@ -1,37 +1,30 @@
 let db = require('../database/models');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+
 
 let securityController = {
-    login: function (req, res) {
+     login: function (req, res) {
         return res.render('security/login', {
             failed: req.query.failed,
         });
     },
-    authenticate: function (req, res) {
+     authenticate: function (req, res) {
         db.usuarios.findOne({ where: { email: req.body.email } })
             .then((user) => {
 
                 if (bcrypt.compareSync(req.body.password, user.password)) {
 
-                    req.session.user = user;
-
-                    if (req.body.rememberme) {
-                        res.cookie('userId', user.id)
+                    if (req.body.remember_me) {
+                        res.cookie('userId', user.id);
+                      }
+                      req.flash('success', 'Welcome!');
+                      req.session.user = user;
+                    } else {
+                      req.flash('danger', 'Wrong user/password combination');
                     }
-                    res.redirect('/');
-
-                }
-                else {
-                    res.redirect('/login?failed=true');
-                }
-
-
-
-            })
-            .catch((error) => {
-
-                res.redirect('/login?failed=true');
-            })
+                    res.redirect(req.get('Referrer'));
+                  })
+            
     },
     register: function (req, res) {
         if (req.method == 'POST') {

@@ -11,8 +11,8 @@
 		<div class="d-flex align-items-center">
 			<h2 class="product-title" ><%- product.nombre %> </h2> 
         </div>
-		<div>
-			<a href="/profile/ <%- product.usuario.id %> "> <h3  ><%- product.usuario.nombre %> </h3> </a> 
+		<div class="usuario_producto">
+			<a href="/profile/ <%- product.usuario.id %> "> <h3> By <%- product.usuario.nombre+ " " + product.usuario.apellido%> </h3> </a> 
 		</div>
 		<p class="editar">
 				<a style="padding-left: 30px; color: white; margin-top: -15px;" href="/product-add">Editar</a>
@@ -26,7 +26,7 @@
 			<div class="col-12 col-lg-4">
 				<section class="comments">
 					<% for( let i = 0; i < comentarios.length; i++ ) { %>
-					<article>
+					<article>	
 						<img src="<%= comentarios[i].usuario.imagen %>" alt="">
 						<div class="data">
 							<p class="user">

@@ -339,7 +339,6 @@ hr {
 }
 .col-12.col-sm-6.col-lg-3{
   align-items: center;
-
 }
 
 
@@ -392,7 +391,7 @@ hr {
 }
 
 .product-detail-img {
-  width: 80%;
+  width: 70%;
   display: block;
   margin: auto;
 }
@@ -510,6 +509,16 @@ hr {
 .comments .user{
   font-size: 1.7em;
   color: black;
+}
+.usuario_producto{
+  color: rgb(0, 96, 58);
+  padding-left: 94px;
+  margin-top: -20px;
+}
+.edit-title{
+  margin-left: 440px;
+  color: white;
+  font-size: 30px;
 }
 
 /*====== Formularios ======*/
