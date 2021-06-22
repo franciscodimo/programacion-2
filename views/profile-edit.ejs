@@ -9,18 +9,18 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
 				<div class="register-form">
-					
+					<% if(typeof locals.user !== 'undefined') %> 
 				    <div class="data">
 					<form method='POST' enctype="multipart/form-data">
-						<input class="formss" type="text" id="nombre" name="nombre" value= <% usuario.nombre %> />
-						<input class="formss" type="text" id="apellido" name="apellido" value= <% usuario.apellido %>/>	
-						<input class="formss" type="text" id="email" name="email" value= <% usuario.email%>/>	
-						<input class="formss" type="password" id="password" name="password" value= <% usuario.password%>/>
-						<input class="formss" type="text" id="telefono" name="telefono" value= <% usuario.telefono%>/>
+						<input class="formss" type="text" id="nombre" name="nombre" value= <%- user.nombre %> />
+						<input class="formss" type="text" id="apellido" name="apellido" value= <%- user.apellido %>/>	
+						<input class="formss" type="text" id="email" name="email" value= <%- user.email%>/>	
+						<input class="formss" type="password" id="password" name="password" value= <%- user.password%>/>
+						<input class="formss" type="text" id="telefono" name="telefono" value= <%- user.telefono%>/>
 						<p class="nacimiento"> Birth date</p>
-						<input  class="formss" type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" value= <% usuario.fecha_de_nacimiento%>/>
+						<input  class="formss" type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" value= <%- user.fecha_de_nacimiento%>/>
 						<label class="formss3" > Choose file</label>
-					    <input class="formss" type="file" name="imagen" id="imagen" value= <% usuarios.imagen %>>
+					    <input class="formss" type="file" name="imagen" id="imagen" value= <%- user.imagen %>>
 						<input class="formss" type="submit" value="Update">
 					</form>
 					

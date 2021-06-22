@@ -7,16 +7,31 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= locals.user.imagen %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= usuario.imagen ? usuario.imagen : '' %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= locals.user ? user.nombre +' '+ user.apellido: '' %> 
-						<a href="/profile-edit">
+					<h1 class="main-title"> <%= usuario.nombre +' '+ usuario.apellido%> 
+						<% if(locals.user && locals.user.id == usuario.id){ %> 
+						<a href="/profile/edit">
 							<i class="fas fa-cog"></i>
 						</a>
+						<% } %> 
 					</h1>
+					<% if(locals.user && locals.user.id == usuario.id){ %> 
 					<a class="btn mt-3 ml-4" href="/login">Change profile</a>
+					<% } %> 
+				</div>
+				<div> 
+					<ul>
+						
+						<li class="productos-perfil" style="color: black;"> productos agregados <%-productos.length%> 	
+						</li>	
+						<li> comentarios  <%- comentarios.length%> </li>
+						<div>
+							<a href="<%-usuario.url_social %>">Red Social</a>
+						</div>	
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -30,16 +45,16 @@
 				<h2 class="titulosss">My products</h2>     
 				<!-- preguntar a pehuen como poder mostrar los productos que el usuario agrego -->
 			</div>
-			<% for( let i = 0; i < product.length; i++ ) { %>
+			<% for( let i = 0; i < productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 				  <section class="product-box">
-					<a href="/product/<%= product[i].id %> ">
+					<a href="/product/<%= productos[i].id %> ">
 					  <figure class="product-box_image">
-						<img src="<%- product[i].imagen  %> " alt="cafetera moulinex">
+						<img src="<%- productos[i].imagen  %> " alt="cafetera moulinex">
 					  </figure>
 					  <article class="product-box_data">
-						<h2><%- product[i].nombre  %> </h2>
-						<p><%- product[i].descripcion  %> </p>
+						<h2><%- productos[i].nombre  %> </h2>
+						<p><%- productos[i].descripcion  %> </p>
 						<p>Comentarios: tiene 99% de condicion de bateria</p>
 					  </article>
 					</a>
@@ -48,6 +63,22 @@
 			  <% } %> 
 			  <div></div>
 			  <div class="col-12"><h2 class="titulosss">My comments</h2></div>
+			  <% for( let i = 0; i < comentarios.length; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				  <section class="product-box">
+					<a href="/product/<%= comentarios[i].producto.id %> ">
+					  <figure class="product-box_image">
+						<img src="<%- comentarios[i].producto.imagen  %> " alt="cafetera moulinex">
+					  </figure>
+					  <article class="product-box_data">
+						<h2><%- comentarios[i].producto.nombre  %> </h2>
+						<p><%- comentarios[i].producto.descripcion  %> </p>
+						<p>Comentarios: tiene 99% de condicion de bateria</p>
+					  </article>
+					</a>
+				  </section>
+				</div>
+			  <% } %> 
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 
