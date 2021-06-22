@@ -27,6 +27,9 @@ module.exports = (sequelize, DataTypes) =>{
         },
         imagen:{
             type: DataTypes.STRING
+        },
+        url_social:{
+            type: DataTypes.STRING
         }
     }
 
