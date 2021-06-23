@@ -22,10 +22,10 @@ let securityController = {
                     } else {
                       req.flash('danger', 'Wrong user/password combination');
                     }
-                    res.redirect(req.get('Referrer'));
-                  })
-            
+                    res.redirect("/");
+                  }) //arreglar el flash//
     },
+
     register: function (req, res) {
         if (req.method == 'POST') {
             req.body.password = bcrypt.hashSync(req.body.password);

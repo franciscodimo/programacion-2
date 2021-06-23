@@ -2,10 +2,10 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2021 a las 15:34:20
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Host: 127.0.0.1
+-- Generation Time: Jun 23, 2021 at 05:14 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `integrador`
+-- Database: `integrador`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +34,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `primary`) VALUES
@@ -55,7 +55,7 @@ INSERT INTO `categorias` (`id`, `nombre`, `primary`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentarios`
+-- Table structure for table `comentarios`
 --
 
 CREATE TABLE `comentarios` (
@@ -67,7 +67,7 @@ CREATE TABLE `comentarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `comentarios`
+-- Dumping data for table `comentarios`
 --
 
 INSERT INTO `comentarios` (`id`, `usuario_id`, `producto_id`, `texto_comentario`, `created_at`) VALUES
@@ -110,12 +110,14 @@ INSERT INTO `comentarios` (`id`, `usuario_id`, `producto_id`, `texto_comentario`
 (37, 7, 10, 'Beautiful watch, bought it for my husband for our 10 year anniversary!', '2021-06-02 22:37:50'),
 (38, 7, 3, 'Great Watch for sports and outdoor life. Liked it so much I\'m looking to get the one in black for fancier events.', '2021-06-02 22:37:50'),
 (39, 7, 17, 'Great Watch for sports and outdoor life. Liked it so much I\'m looking to get the one in black for fancier events.', '2021-06-02 22:37:50'),
-(40, 7, 3, 'Great Watch for sports and outdoor life. Liked it so much I\'m looking to get the one in black for fancier events.', '2021-06-02 22:37:50');
+(40, 7, 3, 'Great Watch for sports and outdoor life. Liked it so much I\'m looking to get the one in black for fancier events.', '2021-06-02 22:37:50'),
+(310, 25, 250, 'dasfdfas', '2021-06-22 14:04:42'),
+(311, 25, 250, 'sfsdg', '2021-06-22 15:15:18');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
@@ -131,7 +133,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Dumping data for table `productos`
 --
 
 INSERT INTO `productos` (`id`, `categoria_id`, `usuario_id`, `nombre`, `url_imagen`, `descripcion`, `precio`, `created_at`, `comentario`) VALUES
@@ -149,12 +151,15 @@ INSERT INTO `productos` (`id`, `categoria_id`, `usuario_id`, `nombre`, `url_imag
 (23, 6, 5, 'Onix', 'verdoso.png', '', 4000, '2021-06-02 00:23:57', ''),
 (242, 11, 20, 'Rolex 300 mega', '1623111431656-undefined.jpg', 'The best watch ever', NULL, '2021-06-08 00:17:11', ''),
 (244, 3, 24, 'reloj', '1623359224477-url_imagen.jpg', 'valioso', NULL, '2021-06-10 21:07:04', ''),
-(247, 3, 18, 'reloj', 'https://s.yimg.com/aah/movadobaby/rolex-cosmograph-daytona-116508-181.jpg', 'rolex', 23232300, '2021-06-19 21:34:34', '');
+(250, 1, 25, 'reloj de arena', './1624370159281-url_imagen.JPG', 'reloj', 90, '2021-06-22 13:55:59', ''),
+(251, 10, 25, 'Running watch', './1624389766794-url_imagen.jpg', 'Es un reloj nuevo, no tiene nada de uso. Para correr', 4000, '2021-06-22 19:22:46', ''),
+(252, 11, 25, 'Reloj para correr', './1624402584918-url_imagen.jpg', 'Nuevo, solo lo use 1 semana', 400, '2021-06-22 22:56:24', ''),
+(253, 10, 25, 'reloj de arena', './1624402820777-url_imagen.jpg', 'el mejor reloj', 7000, '2021-06-22 23:00:20', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -171,37 +176,40 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `fecha_de_nacimiento`, `email`, `telefono`, `password`, `created_at`, `imagen`, `url_social`) VALUES
-(1, 'Tomas ', 'Henschien', '2001-07-30', 'thenschien@udesa.edu.ar', '1122345359', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/tomhenschien/?hl=es-la'),
-(2, 'Francisco', 'Dimo', '2001-07-23', 'fdimo@udesa.edu.ar', '1132758860', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/francisco_dimo/?hl=es-la'),
-(5, 'Estanislao', 'Ron', '2001-08-30', 'eron@udesa.edu.ar', '1178604456', '*7C104EB37FAED87A30624FA952E90F48D5EC2911', '2021-06-01 22:31:01', '', 'https://www.instagram.com/_estanis.ron/?hl=es-la'),
-(6, 'Ignacio', 'Romani', '1989-11-14', 'iromani@digitalhouse.com', '1147837712', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/_digitalhouse/?hl=es-la'),
-(7, 'Matias', 'Heber', '1997-06-23', 'mheber@digitalhouse.con', '1143836128', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/_digitalhouse/?hl=es-la'),
-(8, 'Joaquin', 'Gonzalez', '1983-07-28', 'joaqgonzalez@gmail.com', '1122389200', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/joaquingonzalezoz/?hl=es-la'),
-(9, 'Julian\r\n', 'Velazquez', '2004-06-23', 'julian.velaquez@hotmail.com.ar', '1155076328', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', '', 'https://www.instagram.com/julianvelazquezz/?hl=es-la'),
-(10, 'Marcos', 'Fernandez', '1991-06-01', 'marquitosfdez@yahoo.com', '1178400043', '*63D510371EA2311E5904025273745FA7E5FFD306', '2021-06-01 22:31:01', '', 'https://www.instagram.com/majjfergut/?hl=es-la'),
-(11, 'Fernando', 'Pinto', '1971-09-06', 'fpinto@gmail.com', '1139756392', '*33B0F466B39DA9041CDB939EDD4DEEE7DF6306CF', '2021-06-01 22:31:01', '', 'https://www.instagram.com/osopinto/?hl=es-la'),
-(14, 'Estanislao Ron', '', '0000-00-00', 'eron@colegiosanignacio.edu.ar', '', NULL, '2021-06-01 22:31:01', '', ''),
-(18, 'Estanis', 'Ron', '0000-00-00', 'dimofrancisco@gmail.com', '43171579', '$2a$10$GW5iraHIvb4qSYyWlYCleukXf/sXUkPsuydoRHDL8jMO71BDaM6JW', '2021-06-01 22:31:01', '', ''),
-(20, 'Estanislao', 'Ron', '0000-00-00', 'mron@bio4.com.ar', '3584203235', '$2a$10$kSDJZqU21RgO0mSLkPsN/e29VK1ZUPHbP8cWExeQnXRbaBLM0rWJ.', '2021-06-01 22:31:01', '', ''),
-(21, 'Estanislao', 'Ron', '0000-00-00', 'estanis@gmail.com', '43171579', '$2a$10$YwgSvTxAwBkdQWWRqgKeXeiab2QDL1iavVtKTmFaasM7/VFeX6l0e', '2021-06-01 22:31:01', '', ''),
-(24, 'estanis', 'ron', '2000-02-01', 'estanislao@gmail.com', '03416285200', '$2a$10$rTnIh6sCsEOrZd3K8z4uaODoSDT9o.mwtwAbiLrkmA1kI.al9JKAO', '2021-06-10 20:45:37', '1623357937482-imagen.jpg', 'https://www.instagram.com/_estanis.ron/?hl=es-la');
+(1, 'Tomas ', 'Henschien', '2001-07-30', 'thenschien@udesa.edu.ar', '1122345359', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/tomhenschien/?hl=es-la'),
+(2, 'Francisco', 'Dimo', '2001-07-23', 'fdimo@udesa.edu.ar', '1132758860', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/francisco_dimo/?hl=es-la'),
+(5, 'Estanislao', 'Ron', '2001-08-30', 'eron@udesa.edu.ar', '1178604456', '*7C104EB37FAED87A30624FA952E90F48D5EC2911', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/_estanis.ron/?hl=es-la'),
+(6, 'Ignacio', 'Romani', '1989-11-14', 'iromani@digitalhouse.com', '1147837712', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/_digitalhouse/?hl=es-la'),
+(7, 'Matias', 'Heber', '1997-06-23', 'mheber@digitalhouse.con', '1143836128', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/_digitalhouse/?hl=es-la'),
+(8, 'Joaquin', 'Gonzalez', '1983-07-28', 'joaqgonzalez@gmail.com', '1122389200', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/joaquingonzalezoz/?hl=es-la'),
+(9, 'Julian\r\n', 'Velazquez', '2004-06-23', 'julian.velaquez@hotmail.com.ar', '1155076328', '*AE683F2658025864BD97C684544E34BBB61E0C1B', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/julianvelazquezz/?hl=es-la'),
+(10, 'Marcos', 'Fernandez', '1991-06-01', 'marquitosfdez@yahoo.com', '1178400043', '*63D510371EA2311E5904025273745FA7E5FFD306', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/majjfergut/?hl=es-la'),
+(11, 'Fernando', 'Pinto', '1971-09-06', 'fpinto@gmail.com', '1139756392', '*33B0F466B39DA9041CDB939EDD4DEEE7DF6306CF', '2021-06-01 22:31:01', 'oip.jpg', 'https://www.instagram.com/osopinto/?hl=es-la'),
+(14, 'Estanislao Ron', '', '0000-00-00', 'eron@colegiosanignacio.edu.ar', '', NULL, '2021-06-01 22:31:01', 'oip.jpg', ''),
+(18, 'Estanis', 'Ron', '0000-00-00', 'dimofrancisco@gmail.com', '43171579', '$2a$10$GW5iraHIvb4qSYyWlYCleukXf/sXUkPsuydoRHDL8jMO71BDaM6JW', '2021-06-01 22:31:01', 'oip.jpg', ''),
+(20, 'Estanislao', 'Ron', '0000-00-00', 'mron@bio4.com.ar', '3584203235', '$2a$10$kSDJZqU21RgO0mSLkPsN/e29VK1ZUPHbP8cWExeQnXRbaBLM0rWJ.', '2021-06-01 22:31:01', 'oip.jpg', ''),
+(21, 'Estanislao', 'Ron', '0000-00-00', 'estanis@gmail.com', '43171579', '$2a$10$YwgSvTxAwBkdQWWRqgKeXeiab2QDL1iavVtKTmFaasM7/VFeX6l0e', '2021-06-01 22:31:01', 'oip.jpg', ''),
+(24, 'estanis', 'ron', '2000-02-01', 'estanislao@gmail.com', '03416285200', '$2a$10$rTnIh6sCsEOrZd3K8z4uaODoSDT9o.mwtwAbiLrkmA1kI.al9JKAO', '2021-06-10 20:45:37', '1623357937482-imagen.jpg', 'https://www.instagram.com/_estanis.ron/?hl=es-la'),
+(25, 'Estanislap', 'Ron', '2021-06-17', 'estanis21@gmail.com', '43171578', '$2a$10$ST8x5.MhYSqAOKNKhAC.ue5qUy4Lvepm/3zskwE8bJGeTEHK7xkj.', '2021-06-22 13:54:13', '1624370053204-imagen.JPG', 'https://www.instagram.com/julianvelazquezz/?hl=es-la'),
+(26, 'Manuel ', 'Ron', '2000-10-04', 'mron@bio4.com.ar', '43171579', '$2a$10$L1oNe7gZFbHp66E8rJ8jXuaguZG1qM4pTgqsdIilfPW1eAG/mXeoS', '2021-06-22 14:56:44', '1624373804735-imagen.MP4', ''),
+(27, 'yertyir', 'tudfkrfgk', '2021-06-10', 'mron@bio4.com.ar', 'kertyi35', '$2a$10$gOzbd.SaYOnMtaEC18.0i.ySA3rM1LB7R2X1.mAXbArVp7VVDRloi', '2021-06-22 14:57:30', '1624373850225-imagen.JPG', '');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categorias`
+-- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `comentarios`
+-- Indexes for table `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id`),
@@ -209,7 +217,7 @@ ALTER TABLE `comentarios`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
--- Indices de la tabla `productos`
+-- Indexes for table `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`),
@@ -217,52 +225,52 @@ ALTER TABLE `productos`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `comentarios`
+-- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=310;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `comentarios`
+-- Constraints for table `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`),
   ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
--- Filtros para la tabla `productos`
+-- Constraints for table `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`),

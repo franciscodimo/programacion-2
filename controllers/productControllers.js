@@ -11,7 +11,6 @@ let productController = {
 				db.comentarios.findAll({
 					where: { producto_id: producto.id },
 					include: [{ association: "usuario" }]
-
 				})
 					.then((comentarios) => {
 						console.log(comentarios)
