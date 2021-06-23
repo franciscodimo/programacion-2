@@ -47,37 +47,21 @@
 			</div>
 			<% for( let i = 0; i < productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
-				  <section class="product-box">
+				  <section class="product-box" style="margin-bottom: 100px;">
 					<a href="/product/<%= productos[i].id %> ">
 					  <figure class="product-box_image">
 						<img src="<%- productos[i].imagen  %> " alt="cafetera moulinex">
 					  </figure>
 					  <article class="product-box_data">
-						<h2><%- productos[i].nombre  %> </h2>
-						<p><%- productos[i].descripcion  %> </p>
+						<h2 style="color: white;"><%- productos[i].nombre  %> </h2>
+						
 						
 					  </article>
 					</a>
 				  </section>
 				</div>
 			  <% } %> 
-			  <div></div>
-			  <div class="col-12"><h2 class="titulosss">My comments</h2></div>
-			  <% for( let i = 0; i < comentarios.length; i++ ) { %>
-				<div class="col-12 col-sm-6 col-lg-3">
-				  <section class="product-box">
-					<a href="/product/<%= comentarios[i].producto.id %> ">
-					  <figure class="product-box_image">
-						<img src="<%- comentarios[i].producto.imagen  %> " alt="cafetera moulinex">
-					  </figure>
-					  <article class="product-box_data">
-						<h2><%- comentarios[i].producto.nombre  %> </h2>
-						<p><%- comentarios[i].producto.descripcion  %> </p>
-					  </article>
-					</a>
-				  </section>
-				</div>
-			  <% } %> 
+			  
 
 	<!-- footer -->
 	<%- include('./partials/footer') %> 
