@@ -9,8 +9,6 @@ var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
-var categoriasRouter = require('./routes/categorias');
-var comentariosRouter = require('./routes/comentarios');
 var securityRouter = require('./routes/security');
 
 const { flash } = require('express-flash-message');
@@ -87,8 +85,6 @@ app.use('/product', productRouter);
 app.use('/productEdit', productRouter);
 app.use ('/search', searchResultsRouter );
 app.use ('/profile', profileRouter );
-app.use ('/categorias', categoriasRouter);
-app.use ('/comentarios', comentariosRouter);
 app.use ('/', securityRouter);
 
 // ya se que esto va en las rutas pero no tenia tiempo de arreglarlo
