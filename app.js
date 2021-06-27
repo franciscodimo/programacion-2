@@ -40,7 +40,7 @@ app.use (session(
   { secret : 'Nuestro mensaje secreto',
    resave: false,
    saveUninitialized: true })),
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //esta linea hace que la carpeta public sea un servidor de archivos
 
 const privateRoutes = [
   '/profile'
