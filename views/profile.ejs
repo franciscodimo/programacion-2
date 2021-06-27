@@ -54,6 +54,7 @@
 					  </figure>
 					  <article class="product-box_data">
 						<h2 style="color: white;"><%- productos[i].nombre  %> </h2>
+						<a href="/profile/<%= usuario.id %>/remove" onclick="return confirm('Are you sure you want to delete this product?') ? true : event.preventDefault()" class="btn btn-danger">Delete</a>
 						
 						
 					  </article>

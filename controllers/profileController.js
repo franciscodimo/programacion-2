@@ -20,6 +20,11 @@ let profileController = {
   profileEdit: function (req, res) {
     res.render('profile-edit')
   }, 
+  remove(req, res) {
+    req.session.cart.splice(req.params.order, 1);
+    req.flash('warning', 'Product removed');
+    res.redirect(req.get('Referrer'));
+  },
  
 }
 

@@ -96,7 +96,8 @@ let productController = {
 		.catch((error) => {
 			return res.send(error);
 		})
-	}
+	},
+	
 
 
 }
