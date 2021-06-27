@@ -5,7 +5,7 @@
 	<!-- Header -->
 	<!-- product detail -->
 <!-- product detail -->
-
+      
 		
 	<div class="product-detail">
 		<div class="d-flex align-items-center">
@@ -25,6 +25,7 @@
 			</article>
 			<div class="col-12 col-lg-4">
 				<section class="comments">
+					<!-- hacer if para que solo puedan comentar los logueados -->
 					<% for( let i = 0; i < comentarios.length; i++ ) { %>
 					<article>	
 						<img src="<%= comentarios[i].usuario.imagen %>" alt="">
@@ -35,14 +36,18 @@
 						</div>
 					</article>
 					<% } %> 
+					
 				</section>
+				<% if(locals.user) { %> 
 					<form class="form" action="/product/<%= product.id %>/comentar " method="POST">
 						<input class="form-input" type="text" name="texto_comentario" id="texto_comentario" placeholder="New comment...">
 						<button type="submit" class="buy-now-button">ADD COMMENT</button>
 					</form>
+					<% } %> 
 					<hr>
 				</div>
 			</div>
+
 			
 </div>
 <!-- /product detail -->

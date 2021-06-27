@@ -17,8 +17,13 @@ let indexController = {
 
 		.catch((error) => {
 			return res.send(error);
-		})}}
+		})},
+		mapa: function (req, res) {
+			res.render('mapa')
+		}
+	}
 	
+	   
 
 
   module.exports = indexController;

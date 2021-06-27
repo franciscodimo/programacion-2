@@ -9,8 +9,6 @@ var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
 var searchResultsRouter = require ('./routes/searchResults');
 var profileRouter = require ('./routes/profile');
-var categoriasRouter = require('./routes/categorias');
-var comentariosRouter = require('./routes/comentarios');
 var securityRouter = require('./routes/security');
 
 const { flash } = require('express-flash-message');
@@ -42,7 +40,7 @@ app.use (session(
   { secret : 'Nuestro mensaje secreto',
    resave: false,
    saveUninitialized: true })),
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //esta linea hace que la carpeta public sea un servidor de archivos
 
 const privateRoutes = [
   '/profile'
@@ -87,8 +85,6 @@ app.use('/product', productRouter);
 app.use('/productEdit', productRouter);
 app.use ('/search', searchResultsRouter );
 app.use ('/profile', profileRouter );
-app.use ('/categorias', categoriasRouter);
-app.use ('/comentarios', comentariosRouter);
 app.use ('/', securityRouter);
 
 // ya se que esto va en las rutas pero no tenia tiempo de arreglarlo

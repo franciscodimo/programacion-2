@@ -12,7 +12,7 @@ let productController = {
 					where: { producto_id: producto.id },
 					include: [{ association: "usuario" }]
 				})
-					.then((comentarios) => {
+					.then((comentarios) => { //promesa anidada
 						console.log(comentarios)
 						return res.render('product', {
 							product: producto,
@@ -85,7 +85,7 @@ let productController = {
 	create: function(req, res){
 
 		 req.body.usuario_id = req.session.user.id;
-		if (req.file) req.body.url_imagen = (req.file.destination + req.file.filename).replace('public', '');
+		if (req.file) req.body.url_imagen = (req.file.destination + req.file.filename).replace('public', ''); //req.file lo que nos devuelve es un objeto con propiedades
 		if (req.body.url) req.body.url_imagen = req.body.url;
 		console.log(req.body)
 		db.productos.create(req.body)
