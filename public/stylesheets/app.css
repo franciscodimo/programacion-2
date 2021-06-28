@@ -83,11 +83,15 @@ hr {
 }
 .col-12.col-md-4{
   margin-top: 0px;
+  margin-left: -25px;
 }
 
 .col-12.col-md-4{
   color: white;
 } 
+.col-12.col-lg-4{
+  background-color: rgb(0, 96, 58);
+}
 
 .main-header_home-link{
   display: block;
@@ -148,11 +152,9 @@ hr {
 }
 
 .left-navbar {
-  align-items: center;
-  color: white;
-  font-size: 1.8em;
-  padding-left: 778px;  
+  display: block;
 }
+.left-navbar,
 .right-navbar {
   align-items: center;
   color: white;
@@ -454,9 +456,9 @@ hr {
 }
 
 .buy-now-button {
-  background-color: rgb(0, 96, 58);
+  background-color: white;
   font-size: 1.6em;
-  color: #ffffff;
+  color: rgb(0, 96, 58);
   padding: 15px;
   border-radius: 8px;
   border: none;
@@ -572,6 +574,7 @@ textarea.form-input {
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
+  font-size: 15px;
 }
 
 .edit-product-form{
@@ -691,6 +694,15 @@ textarea.form-input {
   color: white;
   font-size: 20px;
  }
+ .slider{
+   padding-top: 15px;
+ }
+ .mapa{
+   width: 95%;
+   padding-left: 75px;
+   margin-top: 50px;
+   align-items: center;
+ }
 
 
 /*====== Media-Queries ======*/
@@ -708,14 +720,21 @@ textarea.form-input {
     display: none;
   }
 
-  .main-navbar,
-  .left-navbar,
+
   .right-navbar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    margin-left: 70%;
+    
   }
+  .left-navbar{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 70%;
+    
+  }
+  
 
   .left-navbar a,
   .right-navbar a {
@@ -728,7 +747,7 @@ textarea.form-input {
   }
 
   .left-navbar li {
-    margin-right: 15px;
+    margin-left: 15px;
   }
 
   .right-navbar li {
