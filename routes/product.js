@@ -19,5 +19,5 @@ router.get('/', productController.form);
 router.post('/', upload.single('url_imagen'), productController.create); 
 router.post('/:id/comentar', productController.comentarios);
 router.post('/', productController.add);
-router.all("/:id/delete", productController.eliminarProducto);
+router.post("/:id/delete", productController.eliminarProducto);
 module.exports = router; 
