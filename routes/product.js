@@ -19,5 +19,6 @@ router.get('/', productController.form);
 router.post('/', upload.single('url_imagen'), productController.create); //aca se le pasa el upload.single para cargar la imagen y el nombre del input del formulario donde tengo el file
 router.post('/:id/comentar', productController.comentarios);
 router.post('/', productController.add);
+router.all("/:id/delete", productController.eliminarProducto);
 module.exports = router; 
  //todo este desarrollo de multer aca forma una especie de middlewere, este middlewere es algo que se ejecuta siempre y tiene la carecteristica de ir devolviendo y migrando los distintos tipos de request y response

@@ -97,6 +97,18 @@ let productController = {
 			return res.send(error);
 		})
 	},
+	eliminarProducto(req, res, next) {
+		db.productos.destroy({ where: { id: req.params.id } })
+		  .then(() => {
+			req.flash('warning', 'Producto eliminado');
+			res.redirect('/');
+		  })
+		  .catch((error) => {
+			req.flash('danger', '¡Algo ha salido mal!');
+			next(error);
+		  });
+	  },
+	  
 	
 
 

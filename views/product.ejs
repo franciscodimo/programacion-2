@@ -12,14 +12,19 @@
 			<h2 class="product-title" ><%- product.nombre %> </h2> 
         </div>
 		<div class="usuario_producto">
-			<a href="/profile/ <%- product.usuario.id %> "> <h3 style="margin-top: 3px; font-size: 16px;"> By <%- product.usuario.nombre+ " " + product.usuario.apellido%> </h3> </a> 
+			<a href="/profile/ <%- product.usuario.id %> "> <h3 style="margin-top: 3px; font-size: 16px;"> By <%- product.usuario.nombre+ " " + product.usuario.apellido %></h3></a>  
 		</div>
-		<p class="editar">
-				<a style="padding-left: 30px; color: white; margin-top: -15px;" href="/product-add">Editar</a>
-			</p>
+		<% if (locals.user) { %>
+			<a href="<%- product.id %>/edit" class="btn btn-info" style="padding: 5px; margin-left: 6.5%;">Edit</a>
+			<a href="<%- product.id %>/delete" onclick="return confirm('Are you sure?') ? true : event.preventDefault()" class="btn btn-danger"  style="padding: 5px;">Delete</a>
+		 
+			<% } else { %>
+			
+		<% } %>	
 		<div class="row">
 			<article class="col-12 col-lg-8 product-detail-info">
-				<img src="<%- product.url_imagen  %> " alt="" class="product-detail-img">
+				<img  style="padding-top: 20px;" src="<%- product.url_imagen  %> " alt="" class="product-detail-img">
+				<p style="color: rgb(0, 96, 58); margin-top: -40px;padding-left: 100px; font-size: 20px;"> <%- product.precio + " USD" %></p>
 				<p class="product-detail-description">
 					<%- product.descripcion  %> </p>
 			</article>
@@ -44,7 +49,7 @@
 						<button type="submit" class="buy-now-button">ADD COMMENT</button>
 					</form>
 					<% } %> 
-					<hr>
+					
 				</div>
 			</div>
 

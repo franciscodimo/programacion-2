@@ -3,6 +3,9 @@ let profileController = {
    profile:  async function (req, res) {
     let productos = await db.productos.findAll({
       where: { usuario_id: req.params.id },
+      order: [
+        [ 'created_at', 'DESC' ]
+    ],
     }
     )
     let comentarios = await db.comentarios.findAll({
@@ -20,11 +23,8 @@ let profileController = {
   profileEdit: function (req, res) {
     res.render('profile-edit')
   }, 
-  remove(req, res) {
-    req.session.cart.splice(req.params.order, 1);
-    req.flash('warning', 'Product removed');
-    res.redirect(req.get('Referrer'));
-  },
+  
+  
  
 }
 

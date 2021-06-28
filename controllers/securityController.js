@@ -23,7 +23,7 @@ let securityController = {
                       req.flash('danger', 'Wrong user/password combination');
                     }
                     res.redirect("/");
-                  }) //arreglar el flash//
+                  })
     },
 
     register: function (req, res) {

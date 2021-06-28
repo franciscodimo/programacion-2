@@ -19,17 +19,17 @@
 						<% } %> 
 					</h1>
 					<% if(locals.user && locals.user.id == usuario.id){ %> 
-					<a class="btn mt-3 ml-4" href="/login">Change profile</a>
+					<a class="btn mt-3 ml-4" href="/login">Change account</a>
 					<% } %> 
 				</div>
 				<div> 
-					<ul>
+					<ul style="padding-top: 10px;">
 						
-						<li class="productos-perfil" style="color: black;"> productos agregados <%-productos.length%> 	
+						<li class="productos-perfil" style="font-size: 20px; border-bottom: solid; width: fit-content;"> Added products: <%-productos.length%> 	
 						</li>	
-						<li> comentarios  <%-comentarios.length%> </li>
+						<li style="font-size: 20px; border-bottom: solid; width: fit-content;"> Comments made:  <%-comentarios.length%> </li>
 						<div>
-							<a href="<%-usuario.url_social %>">Red Social</a>
+							<a href="<%-usuario.url_social %>" style="font-size: 20px; border-bottom: solid">Link to social media</a>
 						</div>	
 					</ul>
 				</div>
@@ -54,7 +54,7 @@
 					  </figure>
 					  <article class="product-box_data">
 						<h2 style="color: white;"><%- productos[i].nombre  %> </h2>
-						<a href="/profile/<%= usuario.id %>/remove" onclick="return confirm('Are you sure you want to delete this product?') ? true : event.preventDefault()" class="btn btn-danger">Delete</a>
+						
 						
 						
 					  </article>
